@@ -1,6 +1,28 @@
-<html>
-    <head></head>
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'/>
+        <meta name='viewport' content='width=device-width' initial-scale='1.0' maximum-scale='1.0'/>
+        <title>Plantr</title>
+        <link rel='stylesheet' href='/styles/styles.css'/>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    </head>
     <body>
-        <h1>Profile Page</h1>
+        {{#plants}}
+            <h2>{{common_name}}</h2>
+            <p>{{scientific_name}}</p>
+        {{/plants}}
+        <aside>
+            <h1>Create Plant</h1>
+            <form method="POST" action="/account/create-plant">
+                <input type="text" placeholder="Common Name" name="common_name">
+                <input type="text" placeholder="Scientific Name" name="scientific_name">
+                <input type="text" placeholder="Watering Schedule" name="watering_schedule">
+                <input type="text" placeholder="Light Requirement" name="light_requirement">
+                <input type="text" placeholder="Soil Type" name="soil_type">
+                <button>Add Plant</button>
+            </form>
+        </aside>
     </body>
-<html>
+    <script src="app.js"></script>
+</html>
