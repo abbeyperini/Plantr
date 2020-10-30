@@ -70,11 +70,12 @@ router.post('/delete-plant', (req, res)=> {
 
 //update plant
 router.get('/edit/:id', (req, res)=> {
-    const plant_id = parseInt(req.params.id)
+    const plant_id = req.params.id
     console.log(plant_id)
 
     models.Plants.findByPk(plant_id).then((plant)=> {
-        res.render('update-plant', plant.dataValues)
+        console.log(plant.toJSON())
+        res.render('update-plant', {plant: plant.dataValues})
     }).catch(error => {
         console.log(error)
     })

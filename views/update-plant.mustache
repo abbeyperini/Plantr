@@ -10,7 +10,7 @@
     <body>
          
         <aside>
-        {{#plants}}
+        {{#plant}}
             <h1>Edit Plant</h1>
             <form method="POST" action="/account/update-plant">
                 <input type="hidden" value="{{id}}" name="plant_id">
@@ -21,8 +21,7 @@
                 <input type="text" placeholder="Soil Type" name="soil_type" value={{soil_type}}>
                 <button>Add Plant</button>
             </form>
-        {{/plants}}
+        {{/plant}}
         </aside>
     </body>
-    <script src="app.js"></script>
 </html>
