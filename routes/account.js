@@ -7,3 +7,7 @@ app.engine('mustache', mustacheExpress());
 app.set('views', './views');
 app.set('view engine', 'mustache');
 module.exports = router;
+
+router.get('/', (req, res) => {
+    res.render('account');
+})
