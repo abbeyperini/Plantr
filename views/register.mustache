@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'/>
+        <meta name='viewport' content='width=device-width' initial-scale='1.0' maximum-scale='1.0'/>
+        <title>Plantr</title>
+        <link rel='stylesheet' href='/styles/styles.css'/>
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"> -->
+    </head>
+    <body>
+        <main>
+            <h3>{{message}}</h3>
+            <nav class="loginBox">
+                <form method="POST" action="/index/register/user">
+                    <input type="text" placeholder="username" name="username">
+                    <input type="text" placeholder="password" name="password">
+                    <button>Register</button>
+                </form>
+                <p>Already have a username? <a href='/index'>Login</a></p>
+            </nav>
+        </main>
+    </body>
+    <script src="app.js"></script>
+</html>

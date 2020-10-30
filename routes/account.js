@@ -8,6 +8,7 @@ app.set('views', './views');
 app.set('view engine', 'mustache');
 module.exports = router;
 
+
 //LAYOUT PLAN:
 //----------------------------------------------------------------//
 //account routers
@@ -24,4 +25,5 @@ module.exports = router;
 router.get('/', (req, res) => {
     res.render('account')
 })
+
 
