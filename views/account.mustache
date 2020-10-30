@@ -11,6 +11,11 @@
         {{#plants}}
             <h2>{{common_name}}</h2>
             <p>{{scientific_name}}</p>
+            <a href="/account/edit/{{id}}"><button>Edit</button></a>
+            <form method="POST" action="/account/delete-plant">
+                <input type="hidden" value='{{id}}' name="plant_id">
+                <button>Delete</button>
+            </form>
         {{/plants}}
         <aside>
             <h1>Create Plant</h1>
