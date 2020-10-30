@@ -2,6 +2,7 @@
 secrets.js
 config.json
 .env
+sessionSecret.js
 
 # Logs
 logs

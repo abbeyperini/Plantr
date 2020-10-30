@@ -12,18 +12,19 @@ const { Op } = require('sequelize');
 const { allowedNodeEnvironmentFlags } = require('process');
 const indexRoutes = require('./routes/index');
 const accountRoutes = require('./routes/account');
+const secrets = require('./sessionSecret');
 
 app.use(session({
-    secret: process.env.SECRET,
+    secret: secrets,
     resave: false,
     saveUninitialized: true,
 }));
 
-app.use(bodyParse.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use('/styles', express.static('styles'));
 app.use('/images', express.static('images'));
-app.engine('mustache', mustacheExpress(VIEWS_PATH + '/partials', '.mustache'));
-app.set('views', VIEWS_PATH);
+app.engine('mustache', mustacheExpress(VIEW_PATH + '/partials', '.mustache'));
+app.set('views', VIEW_PATH);
 app.set('view engine', 'mustache');
 app.use('/index', indexRoutes);
 app.use('/account', accountRoutes);
