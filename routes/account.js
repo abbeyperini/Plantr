@@ -24,7 +24,13 @@ module.exports = router;
 
 //see profile page that displays all posts
 router.get('/', (req, res) => {
-    models.Plants.findAll().then((plants) => {
+    let userId = req.session.userId;
+
+    models.Plants.findAll({
+        where: {
+            user_id: userId
+        }
+    }).then((plants) => {
         res.render("account", {plants: plants})
     })
 
