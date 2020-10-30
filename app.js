@@ -9,7 +9,7 @@ const { dirname } = require('path');
 const VIEW_PATH = path.join(__dirname, '/views');
 const models = require('./models');
 const { Op } = require('sequelize');
-const { allowedNodeEnvironmentFlags } = require('process');
+const authenticate = require('./authenticate');
 const indexRoutes = require('./routes/index');
 const accountRoutes = require('./routes/account');
 const secrets = require('./sessionSecret');
@@ -27,7 +27,11 @@ app.engine('mustache', mustacheExpress(VIEW_PATH + '/partials', '.mustache'));
 app.set('views', VIEW_PATH);
 app.set('view engine', 'mustache');
 app.use('/index', indexRoutes);
-app.use('/account', accountRoutes);
+app.use('/account', authenticate.authenticate, accountRoutes);
+
+app.get('/', (req, res) => {
+    res.redirect('/index')
+})
 
 app.listen(3000, () => {
     console.log("Server is running...");
