@@ -4,22 +4,23 @@
         <meta charset='UTF-8'/>
         <meta name='viewport' content='width=device-width' initial-scale='1.0' maximum-scale='1.0'/>
         <title>Plantr</title>
+        <link rel="shortcut icon" href="/images/plantrLogo.svg" type="image/x-icon">
         <link rel='stylesheet' href='/styles/styles.css'/>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
-        {{#plants}}
-            <h2>{{common_name}}</h2>
-            <p>{{scientific_name}}</p>
-            <a href="/account/edit/{{id}}"><button>Edit</button></a>
-            <form method="POST" action="/account/delete-plant">
-                <input type="hidden" value='{{id}}' name="plant_id">
-                <button>Delete</button>
-            </form>
-        {{/plants}}
-        <aside>
+        {{> menu}}
+        <main class="main-plants">
+            {{#plants}}
+                <div class="account-plant">
+                    <a href="/account/edit/{{id}}"><h2>{{common_name}}</h2></a>
+                    <p>{{scientific_name}}</p>
+                </div>
+            {{/plants}}
+        </main>
+        <aside class="create-plants">
             <h1>Create Plant</h1>
-            <form method="POST" action="/account/create-plant">
+            <form class="create-inputs" method="POST" action="/account/create-plant">
                 <input type="text" placeholder="Common Name" name="common_name">
                 <input type="text" placeholder="Scientific Name" name="scientific_name">
                 <input type="text" placeholder="Watering Schedule" name="watering_schedule">
@@ -28,5 +29,6 @@
                 <button>Add Plant</button>
             </form>
         </aside>
+        {{> footer}}
     </body>
 </html>

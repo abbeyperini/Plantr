@@ -4,24 +4,32 @@
         <meta charset='UTF-8'/>
         <meta name='viewport' content='width=device-width' initial-scale='1.0' maximum-scale='1.0'/>
         <title>Plantr</title>
+        <link rel="shortcut icon" href="/images/plantrLogo.svg" type="image/x-icon">
         <link rel='stylesheet' href='/styles/styles.css'/>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
-         
-        <aside>
+        {{> menu}}
+        <main class="main-edit">
         {{#plant}}
             <h1>Edit Plant</h1>
-            <form method="POST" action="/account/update-plant">
-                <input type="hidden" value="{{id}}" name="plant_id">
-                <input type="text" placeholder="Common Name" name="common_name" value={{common_name}}>
-                <input type="text" placeholder="Scientific Name" name="scientific_name" value={{scientific_name}}>
-                <input type="text" placeholder="Watering Schedule" name="watering_schedule" value={{watering_schedule}}>
-                <input type="text" placeholder="Light Requirement" name="light_requirement" value={{light_requirement}}>
-                <input type="text" placeholder="Soil Type" name="soil_type" value={{soil_type}}>
-                <button>Add Plant</button>
-            </form>
+            <div class="update-plant-forms">
+                <form class="edit-form" method="POST" action="/account/update-plant">
+                    <input type="hidden" value="{{id}}" name="plant_id">
+                    <input type="text" placeholder="Common Name" name="common_name" value={{common_name}}>
+                    <input type="text" placeholder="Scientific Name" name="scientific_name" value={{scientific_name}}>
+                    <input type="text" placeholder="Watering Schedule" name="watering_schedule" value={{watering_schedule}}>
+                    <input type="text" placeholder="Light Requirement" name="light_requirement" value={{light_requirement}}>
+                    <input type="text" placeholder="Soil Type" name="soil_type" value={{soil_type}}>
+                    <button>Edit Plant</button>
+                </form>
+                <form class= "delete-form" method="POST" action="/account/delete-plant">
+                    <input type="hidden" value='{{id}}' name="plant_id">
+                    <button>Delete</button>
+                </form>
+            </div>
         {{/plant}}
-        </aside>
+        </main>
+        {{> footer}}
     </body>
 </html>
