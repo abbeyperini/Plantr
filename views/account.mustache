@@ -13,14 +13,10 @@
         <main class="main-plants">
             {{#plants}}
                 <div class="account-plant">
-                    <div class="image-cropper">
-                        <img src="/images/pothos.jpeg" alt="avatar" />
-                    </div>
-                    <a href="/account/edit/{{id}}"><h2>{{common_name}}</h2></a>
+                    <a href="/account/edit/{{id}}">
+                    <h2>{{common_name}}</h2></a>
                     <p>{{scientific_name}}</p>
-                    
-
-                    
+                    <a href="/account/add-post/{{id}}"><button>Post</button></a>
                 </div>
             {{/plants}}
         </main>
