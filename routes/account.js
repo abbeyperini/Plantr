@@ -71,3 +71,11 @@ function uploadFile(req, callback) {
         callback(file.name)
     })
   }
+
+  router.get("/add-post/:id", (req, res) => {
+      const plant_id = req.params.plant_id;
+
+      models.Plants.findByPK(plant_id).then((plant) => {
+          res.render("details", {plant: plant})
+      })
+  })
