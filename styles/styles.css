@@ -6,6 +6,9 @@
 
 html {
     font-family: 'Comfortaa', cursive;
+    background-color: #E9D985;
+    color: #222E50;
+    text-align: center;
 }
 
 /* space cadet: #222E50
@@ -13,3 +16,220 @@ teal blue: #007991
 polished pine: #439A86
 cambridge blue: #BCD8C1
 flax: #E9D985 */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    background-color: #007991;
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+}
+
+.loginMain {
+    background-color: #BCD8C1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    margin-top: 20%;
+    border-radius: 8px;
+}
+
+.loginBox {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    text-align: center;
+}
+
+.loginMain input, .create-inputs input {
+    margin: 10px;
+    margin-right: 0;
+    padding: 5px;
+}
+
+.loginMain p {
+    margin: 10%;
+}
+
+.loginMain button, .create-inputs button {
+    margin: 15px;
+    margin-left: 10px;
+}
+
+.loginInputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #007991;
+    width: 100%;
+}
+
+.main-menu {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #007991;
+    width: 100%;
+}
+
+.main-menu p {
+    padding: 20px;
+}
+
+#footer-logo {
+    height: 100px;
+    padding: 5px;
+}
+
+.main-plants, .main-edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20%;
+}
+
+.account-plant {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: #BCD8C1;
+    width: 80%;
+    border-radius: 8px;
+}
+
+.create-plants {
+    margin: 1%;
+    margin-bottom: 5%;
+}
+
+h1 {
+    padding: 20px;
+}
+
+.create-inputs {
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.account-plant p, .account-plant a {
+    margin: 10px;
+}
+
+.main-edit {
+    background-color: #BCD8C1;
+    border-radius: 8px;
+}
+
+.update-plant-forms {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.update-plant-forms input {
+    margin: 15px;
+    padding: 5px;
+}
+
+.update-plant-forms button {
+    margin: 10px;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 600px) {
+    .loginMain {
+        height: 400px;
+        width: 600px;
+        margin-top: 10%;
+    }
+
+    .loginBox {
+        padding: 0;
+        margin: 10%;
+    }
+
+    .loginInputs {
+        flex-direction: row;
+    }
+
+    .loginMain p {
+        margin: 5%;
+    }
+
+    .loginMain input {
+        margin: 20px;
+    }
+
+    .main-plants, .main-edit {
+        margin-top: 10%;
+    }
+}
+
+@media (min-width: 900px) {
+    .loginMain {
+        height: 500px;
+        width: 800px;
+    }
+
+    .loginBox {
+        margin: 10%;
+    }
+
+    .loginInputs {
+        flex-direction: row;
+    }
+
+    .loginMain p {
+        margin: 5%;
+    }
+
+    .loginMain input {
+        margin: 20px;
+    }
+
+    .create-inputs {
+        flex-direction: row;
+    }
+    
+    .main-plants, .main-edit {
+        margin-top: 7%;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .update-plant-forms, .edit-form {
+        flex-direction: row;
+    }
+}

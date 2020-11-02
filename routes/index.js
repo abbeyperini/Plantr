@@ -24,20 +24,30 @@ router.post('/register/user', (req, res) => {
     let password = req.body.password;
 
     if (username && password) {
-        bcrypt.genSalt(10, function(err, salt) {
-            bcrypt.hash(password, salt, function(err, hash) {
-                
-                let user = models.Users.build({
-                    username: username,
-                    password: hash
+        models.Users.findOne({
+            where: {
+                username: username
+            }
+        }).then(user => {
+            if (user) {
+                bcrypt.genSalt(10, function(err, salt) {
+                    bcrypt.hash(password, salt, function(err, hash) {
+                        
+                        let user = models.Users.build({
+                            username: username,
+                            password: hash
+                        })
+        
+                        user.save().then((savedUser) => {
+                            res.redirect('/index')
+                        }).catch((error) => {
+                            console.log(error)
+                        })
+                    })
                 })
-
-                user.save().then((savedUser) => {
-                    res.redirect('/index')
-                }).catch((error) => {
-                    console.log(error)
-                })
-            })
+            } else {
+                res.render('index', {message: "Username exists."})
+            }
         })
     } else {
         res.render('register', {message: "Please provide a username and password."})
