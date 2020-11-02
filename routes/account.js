@@ -8,9 +8,9 @@ const deletePlantController = require("../controllers/delete-plant");
 const getEditPlantPageController = require("../controllers/getEditPlantPage")
 
 const updatePlantController = require("../controllers/update-plant");
-const { Model } = require("sequelize/types");
+// const { Model } = require("sequelize/types");
 
-const updatePlantController = require("../controllers/update-plant")
+// const updatePlantController = require("../controllers/update-plant")
 const { v1: uuidv1 } = require('uuid');
 const formidable = require('formidable');
 const models = require("../models");
@@ -65,11 +65,53 @@ router.get("/edit/:id", getEditPlantPageController);
 
 router.post("/update-plant", updatePlantController);
 
+router.post("/delete-post", (req, res) => {
+    const post_id = req.body.post_id;
+
+    models.Posts.destroy({
+        where: {
+            id: post_id
+        }
+    }).then((deletedPost) => {
+        res.redirect('/account')
+    })
+})
+
 
 //Posting Comment
-router.post('/details-plant',updatePlantController);
+router.post('/add-post', (req, res) => {
+    const common_name = req.body.common_name;
+    const scientific_name = req.body.scientific_name
+    const body = req.body.body;
+    const plant_id = req.body.plant_id;
+    
+    let posting = models.Posts.build({
+        common_name: common_name,
+        scientific_name: scientific_name,
+        body: body,
+        plant_id: plant_id,
+    })
+    
+    posting.save().then((savedPosting)=> {
+        console.log(savedPosting);
+        res.redirect(`/account/details-plant/${plant_id}`);
+    })
+});
 
-router.get('/details-plant', updatePlantController);
+router.get('/details-plant/:id', (req, res) => {
+    const plant_id = req.params.id;
+
+    models.Plants.findByPk(plant_id, {
+        include: [
+            {
+                model: models.Posts,
+                as: 'plant_post'
+            }
+        ]
+    }).then( (plant) => {
+        res.render('details', {Plant: plant})
+    })
+});
 
 function uploadFile(req, callback) {
     new formidable.IncomingForm().parse(req)

@@ -1,49 +1,56 @@
-<html>
-
-<head> 
-
-{{header}}
-
-
-
-</head>
-
-<body>
-
- <h1>Add Post</h1>
-            <form class="create-posts" method="POST" action="/account/add-post">
-                <input type="text" placeholder="plant" name="plant">
-                <input type="text" placeholder="body" name="body">
-                <button>Add Post</button>
-            </form>
-
-
-{{Post}}
-<ul>
-
-    <li>
-        <label>{{plant}} - {{body}} </label>
-    <form method="POST" action="/account/delete-post">
-    <input type="hidden" name= "plant_id" value= "{{id}}">
-    <button>Delete</button>
-    </form>
-    </li>
-    
-
-{{/Post}}
-
-
-
-
-
-
-
-
-{{footer}}
-
-
-</body>
-
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'/>
+        <meta name='viewport' content='width=device-width' initial-scale='1.0' maximum-scale='1.0'/>
+        <title>Plantr</title>
+        <link rel="shortcut icon" href="/images/plantrLogo.svg" type="image/x-icon">
+        <link rel='stylesheet' href='/styles/styles.css'/>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        {{> menu}}
+        {{#Plant}}
+        <main class="posts-main">
+                <img src="{{imageURL}}" width=300>
+                <h2>{{common_name}}</h2>
+            <div class="descriptionBox">
+                <p>{{scientific_name}}</p>
+                <p>{{watering_schedule}}</p>
+                <p>{{light_requirement}}</p>
+                <p>{{soil_type}}</p>
+            </div>
+            <nav>
+                <h3>Add Post</h3>
+                <form class="create-posts" method="POST" action="/account/add-post">
+                    <input type="text" placeholder="Plant Name" name="common_name" value="{{common_name}}">
+                    <input type="text" placeholder="Scientific Name" name="scientific_name" value="{{scientific_name}}">
+                    <input type="text" placeholder="body" name="body">
+                    <input type="hidden" name="plant_id" value={{id}}>
+                    <button>Add Post</button>
+                </form>
+            <nav>
+        </main>
+        <aside class="show-posts">
+            {{#plant_post}}
+            <ul>
+                <li>
+                    <h2>{{plant}}<h2> 
+                    <p>{{body}}</p>
+                    <form method="POST" action="/account/delete-post">
+                        <input type="hidden" name= "post_id" value= "{{id}}">
+                        <button>Delete</button>
+                    </form>
+                </li>
+            </ul>
+            {{/plant_post}}
+        </aside>
+        {{/Plant}}
+        <footer>
+        <!-- {{> footer}} -->
+        </footer>
+    </body>
+</html>
 
 
 

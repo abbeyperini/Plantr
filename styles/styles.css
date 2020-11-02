@@ -43,6 +43,10 @@ button {
     border-radius: 8px;
 }
 
+.posts-main {
+    margin-top: 20%;
+}
+
 .loginBox {
     display: flex;
     justify-content: space-evenly;
@@ -121,7 +125,7 @@ footer {
     border-radius: 8px;
 }
 
-.create-plants {
+.create-plants, .show-posts {
     margin: 1%;
     margin-bottom: 5%;
 }
@@ -191,7 +195,7 @@ h1 {
         margin: 20px;
     }
 
-    .main-plants, .main-edit {
+    .main-plants, .main-edit, .posts-main {
         margin-top: 10%;
     }
 }
@@ -222,7 +226,7 @@ h1 {
         flex-direction: row;
     }
     
-    .main-plants, .main-edit {
+    .main-plants, .main-edit, .posts-main {
         margin-top: 7%;
     }
 }
