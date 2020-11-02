@@ -13,6 +13,9 @@
         <main class="main-plants">
             {{#plants}}
                 <div class="account-plant">
+                    <div class="image-cropper">
+                        <img class="plant-avatar" src={{imageURL}}>
+                    </div>
                     <a href="/account/edit/{{id}}">
                     <h2>{{common_name}}</h2></a>
                     <p>{{scientific_name}}</p>
