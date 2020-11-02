@@ -11,6 +11,7 @@ const updatePlantController = require("../controllers/update-plant")
 app.engine("mustache", mustacheExpress());
 app.set("views", "./views");
 app.set("view engine", "mustache");
+module.exports = router;
 
 
 //see profile page that displays all posts
