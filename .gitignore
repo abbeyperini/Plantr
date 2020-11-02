@@ -3,7 +3,8 @@ secrets.js
 config.json
 .env
 sessionSecret.js
-
+uploads/*
+!uploads/emptyFile.txt
 # Logs
 logs
 *.log

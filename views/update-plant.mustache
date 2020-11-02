@@ -14,6 +14,11 @@
         {{#plant}}
             <h1>Edit Plant</h1>
             <div class="update-plant-forms">
+                <form method="POST" action="/account/update/upload" enctype="multipart/form-data">
+                    <input type="file" name="photo"/>
+                    <button>Upload</button>
+                </form>
+
                 <form class="edit-form" method="POST" action="/account/update-plant">
                     <input type="hidden" value="{{id}}" name="plant_id">
                     <input type="text" placeholder="Common Name" name="common_name" value={{common_name}}>

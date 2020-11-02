@@ -7,6 +7,7 @@ module.exports = (req, res) => {
   const light_requirement = req.body.light_requirement;
   const soil_type = req.body.soil_type;
   const user_id = req.session.userId;
+  const photoURL = req.session.photoURL;
 
   //creating plant object
   let plant = models.Plants.build({
@@ -16,7 +17,10 @@ module.exports = (req, res) => {
     light_requirement: light_requirement,
     soil_type: soil_type,
     user_id: user_id,
+    imageURL: photoURL
   });
+
+  req.session.photoURL = '';
 
   plant.save().then((savedPlant) => {
     console.log(savedPlant);
