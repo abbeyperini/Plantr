@@ -28,6 +28,7 @@ app.set('views', VIEW_PATH);
 app.set('view engine', 'mustache');
 app.use('/index', indexRoutes);
 app.use('/account', authenticate.authenticate, accountRoutes);
+app.use('/uploads', express.static('uploads'))
 
 app.get('/', (req, res) => {
     res.redirect('/index')
