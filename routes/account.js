@@ -65,14 +65,50 @@ router.get("/edit/:id", getEditPlantPageController);
 
 router.post("/update-plant", updatePlantController);
 
+router.post("/delete-post", (req, res) => {
+    const post_id = req.body.post_id;
+
+    models.Posts.destroy({
+        where: {
+            id: post_id
+        }
+    }).then((deletedPost) => {
+        res.redirect('/account')
+    })
+})
+
 
 //Posting Comment
-router.post('/details-plant', updatePlantController);
+router.post('/add-post', (req, res) => {
+    const common_name = req.body.common_name;
+    const scientific_name = req.body.scientific_name
+    const body = req.body.body;
+    const plant_id = req.body.plant_id;
+    
+    let posting = models.Posts.build({
+        common_name: common_name,
+        scientific_name: scientific_name,
+        body: body,
+        plant_id: plant_id,
+    })
+    
+    posting.save().then((savedPosting)=> {
+        console.log(savedPosting);
+        res.redirect(`/account/details-plant/${plant_id}`);
+    })
+});
 
 router.get('/details-plant/:id', (req, res) => {
     const plant_id = req.params.id;
 
-    models.Plants.findByPK(plant_id).then( (plant) => {
+    models.Plants.findByPk(plant_id, {
+        include: [
+            {
+                model: models.Posts,
+                as: 'plant_post'
+            }
+        ]
+    }).then( (plant) => {
         res.render('details', {Plant: plant})
     })
 });
