@@ -6,11 +6,16 @@ const createPlantController = require("../controllers/create-plant");
 const accountController = require("../controllers/account");
 const deletePlantController = require("../controllers/delete-plant");
 const getEditPlantPageController = require("../controllers/getEditPlantPage")
+
+const updatePlantController = require("../controllers/update-plant");
+const { Model } = require("sequelize/types");
+
 const updatePlantController = require("../controllers/update-plant")
 const { v1: uuidv1 } = require('uuid');
 const formidable = require('formidable');
 const models = require("../models");
 const updatePlant = require("../controllers/update-plant");
+
 
 app.engine("mustache", mustacheExpress());
 app.set("views", "./views");
@@ -60,6 +65,12 @@ router.get("/edit/:id", getEditPlantPageController);
 
 router.post("/update-plant", updatePlantController);
 
+
+//Posting Comment
+router.post('/details-plant',updatePlantController);
+
+router.get('/details-plant', updatePlantController);
+
 function uploadFile(req, callback) {
     new formidable.IncomingForm().parse(req)
     .on('fileBegin', (name, file) => {
@@ -79,3 +90,4 @@ function uploadFile(req, callback) {
           res.render("details", {plant: plant})
       })
   })
+

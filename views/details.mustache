@@ -1,0 +1,62 @@
+<html>
+
+<head> 
+
+{{header}}
+
+
+
+</head>
+
+<body>
+
+ <h1>Add Post</h1>
+            <form class="create-posts" method="POST" action="/account/add-post">
+                <input type="text" placeholder="plant" name="plant">
+                <input type="text" placeholder="body" name="body">
+                <button>Add Post</button>
+            </form>
+
+
+{{Post}}
+<ul>
+
+    <li>
+        <label>{{plant}} - {{body}} </label>
+    <form method="POST" action="/account/delete-post">
+    <input type="hidden" name= "plant_id" value= "{{id}}">
+    <button>Delete</button>
+    </form>
+    </li>
+    
+
+{{/Post}}
+
+
+
+
+
+
+
+
+{{footer}}
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
