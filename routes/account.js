@@ -6,7 +6,8 @@ const createPlantController = require("../controllers/create-plant");
 const accountController = require("../controllers/account");
 const deletePlantController = require("../controllers/delete-plant");
 const getEditPlantPageController = require("../controllers/getEditPlantPage")
-const updatePlantController = require("../controllers/update-plant")
+const updatePlantController = require("../controllers/update-plant");
+const { Model } = require("sequelize/types");
 
 app.engine("mustache", mustacheExpress());
 app.set("views", "./views");
@@ -27,3 +28,8 @@ router.post("/delete-plant", deletePlantController);
 router.get("/edit/:id", getEditPlantPageController);
 
 router.post("/update-plant", updatePlantController);
+
+//Posting Comment
+router.post('/details-plant',updatePlantController);
+
+router.get('/details-plant', updatePlantController);
