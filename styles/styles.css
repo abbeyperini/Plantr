@@ -30,6 +30,23 @@ button {
     color: white;
 }
 
+.image-cropper {
+    width: 100px;
+    height: 100px;
+    /* position: relative; */
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+img {
+  /* display: inline; */
+  margin: 0 auto;
+  margin-left: -25%; 
+  height: 100%;
+  width: auto;
+}
+
+
 .loginMain {
     background-color: #BCD8C1;
     display: flex;
@@ -90,6 +107,7 @@ footer {
     align-items: center;
     background-color: #007991;
     width: 100%;
+    color: white;
 }
 
 .main-menu p {
@@ -109,6 +127,10 @@ footer {
     margin-top: 20%;
 }
 
+.main-plants {
+    width: 96%;
+}
+
 .account-plant {
     display: flex;
     flex-direction: row;
@@ -121,9 +143,11 @@ footer {
     border-radius: 8px;
 }
 
+
 .create-plants {
     margin: 1%;
     margin-bottom: 5%;
+    padding-bottom: 3%;
 }
 
 h1 {
@@ -191,6 +215,10 @@ h1 {
         margin: 20px;
     }
 
+    /* .main-plants {
+        width: 96%;
+    } */
+
     .main-plants, .main-edit {
         margin-top: 10%;
     }
@@ -224,6 +252,10 @@ h1 {
     
     .main-plants, .main-edit {
         margin-top: 7%;
+    }
+
+    .main-plants {
+        width: 45%;
     }
 }
 
