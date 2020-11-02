@@ -13,22 +13,13 @@
         <main class="main-plants">
             {{#plants}}
                 <div class="account-plant">
-                    <a href="/account/edit/{{id}}"><h2>{{common_name}}</h2></a>
+                    <a href="/account/edit/{{id}}">
+                    <h2>{{common_name}}</h2></a>
                     <p>{{scientific_name}}</p>
+                    <a href="/account/add-post/{{id}}"><button>Post</button></a>
                 </div>
             {{/plants}}
         </main>
-        <aside class="create-plants">
-            <h1>Create Plant</h1>
-            <form class="create-inputs" method="POST" action="/account/create-plant">
-                <input type="text" placeholder="Common Name" name="common_name">
-                <input type="text" placeholder="Scientific Name" name="scientific_name">
-                <input type="text" placeholder="Watering Schedule" name="watering_schedule">
-                <input type="text" placeholder="Light Requirement" name="light_requirement">
-                <input type="text" placeholder="Soil Type" name="soil_type">
-                <button>Add Plant</button>
-            </form>
-        </aside>
         {{> footer}}
     </body>
 </html>

@@ -4,6 +4,7 @@ const models = require("../models");
 
 module.exports = (req, res) => {
   const plant_id = req.params.id;
+  req.session.updatePlantId = req.params.id;
 
   models.Plants.findByPk(plant_id)
     .then((plant) => {

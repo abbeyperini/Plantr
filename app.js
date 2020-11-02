@@ -14,6 +14,8 @@ const indexRoutes = require('./routes/index');
 const accountRoutes = require('./routes/account');
 const secrets = require('./sessionSecret');
 
+global.__basedir = __dirname;
+
 app.use(session({
     secret: secrets,
     resave: false,
@@ -23,12 +25,12 @@ app.use(session({
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/styles', express.static('styles'));
 app.use('/images', express.static('images'));
+app.use('/uploads', express.static('uploads'));
 app.engine('mustache', mustacheExpress(VIEW_PATH + '/partials', '.mustache'));
 app.set('views', VIEW_PATH);
 app.set('view engine', 'mustache');
 app.use('/index', indexRoutes);
 app.use('/account', authenticate.authenticate, accountRoutes);
-app.use('/uploads', express.static('uploads'))
 
 app.get('/', (req, res) => {
     res.redirect('/index')
