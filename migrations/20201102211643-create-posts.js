@@ -8,13 +8,16 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      plant: {
+      common_name: {
+        type: Sequelize.STRING
+      },
+      scientific_name: {
         type: Sequelize.STRING
       },
       body: {
         type: Sequelize.TEXT
       },
-      user_id: {
+      plant_id: {
         type: Sequelize.INTEGER
       },
       createdAt: {

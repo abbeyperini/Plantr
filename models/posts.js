@@ -11,13 +11,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       models.Posts.belongsTo(models.Plants, {as: 'post', foreignKey: 'plant_id'})
-
     }
   };
   Posts.init({
-    plant: DataTypes.STRING,
+    common_name: DataTypes.STRING,
+    scientific_name: DataTypes.STRING,
     body: DataTypes.TEXT,
-    user_id: DataTypes.INTEGER
+    plant_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Posts',
