@@ -8,9 +8,9 @@ const deletePlantController = require("../controllers/delete-plant");
 const getEditPlantPageController = require("../controllers/getEditPlantPage")
 
 const updatePlantController = require("../controllers/update-plant");
-const { Model } = require("sequelize/types");
+// const { Model } = require("sequelize/types");
 
-const updatePlantController = require("../controllers/update-plant")
+// const updatePlantController = require("../controllers/update-plant")
 const { v1: uuidv1 } = require('uuid');
 const formidable = require('formidable');
 const models = require("../models");

@@ -38,7 +38,7 @@ button {
     border-radius: 50%;
 }
 
-img {
+.plant-avatar {
   /* display: inline; */
   margin: 0 auto;
   margin-left: -25%; 
