@@ -11,6 +11,14 @@ html {
     text-align: center;
 }
 
+body {
+    margin-top: 10%;
+}
+
+main, .show-posts {
+    margin-bottom: 40%;
+}
+
 /* space cadet: #222E50
 teal blue: #007991
 polished pine: #439A86
@@ -100,6 +108,7 @@ footer {
     align-items: center;
     background-color: #007991;
     width: 100%;
+    color: white;
 }
 
 .main-menu {
