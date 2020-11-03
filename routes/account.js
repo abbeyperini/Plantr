@@ -39,6 +39,7 @@ router.post("/create/upload", (req, res) => {
 })
 
 router.post("/update/upload", (req, res) => {
+    let plant_id = req.session.updatePlantId;
 
     uploadFile(req, (photoURL) => {
         photoURL = `/uploads/${photoURL}`;
@@ -46,10 +47,11 @@ router.post("/update/upload", (req, res) => {
             imageURL: photoURL
         }, {
             where: {
-                id: req.session.updatePlantId
+                id: plant_id
             }
         }).then( (updatePlant) => {
-            res.redirect('/account')
+            req.session.updatePlantId = '';
+            res.redirect(`/account/edit/${plant_id}`)
         })
     })
 })
@@ -67,23 +69,24 @@ router.post("/update-plant", updatePlantController);
 
 router.post("/delete-post", (req, res) => {
     const post_id = req.body.post_id;
+    plant_id = req.session.plant_id
 
     models.Posts.destroy({
         where: {
             id: post_id
         }
     }).then((deletedPost) => {
-        res.redirect('/account')
+        res.redirect(`/account/details-plant/${plant_id}`)
     })
 })
 
 router.post('/create/post/upload', (req, res) => {
-    const plant_id = req.body.plant_id;
+    const plant_id = req.session.plant_id;
 
     uploadFile(req, (postPhotoURL) => {
         postPhotoURL = `/uploads/${postPhotoURL}`;
         req.session.postPhotoURL = postPhotoURL;
-        res.redirect('/account')
+        res.redirect(`/account/add-post/${plant_id}`)
       })
 })
 
@@ -112,6 +115,7 @@ router.post('/add-post', (req, res) => {
 
 router.get('/details-plant/:id', (req, res) => {
     const plant_id = req.params.id;
+    req.session.plant_id = plant_id;
 
     models.Plants.findByPk(plant_id, {
         include: [
@@ -138,10 +142,57 @@ function uploadFile(req, callback) {
   }
 
   router.get("/add-post/:id", (req, res) => {
-      const plant_id = req.params.plant_id;
+      const plant_id = req.params.id;
+      req.session.plant_id = plant_id;
 
       models.Plants.findByPk(plant_id).then((plant) => {
-          res.render("details", {plant: plant})
+          res.render("add-post", {Plant: plant})
       })
+  })
+
+  router.get("/edit-post/:id", (req, res) => {
+      const post_id = req.params.id;
+      req.session.post_id = post_id;
+
+      models.Posts.findByPk(post_id).then((post) => {
+          res.render("edit-post", {Post: post})
+      })
+  })
+
+  router.post("/edit-post", (req, res) => {
+    const common_name = req.body.common_name;
+    const scientific_name = req.body.scientific_name
+    const body = req.body.body;
+    const post_id = req.body.post_id;
+    
+    let posting = models.Posts.update({
+        common_name: common_name,
+        scientific_name: scientific_name,
+        body: body,
+    }, {
+        where: {
+            id: post_id
+        }
+    }).then((savedPosting)=> {
+        res.redirect(`/account/edit-post/${post_id}`);
+    })
+  })
+
+  router.post("/update/post/upload", (req, res) => {
+    let post_id = req.session.post_id;
+
+    uploadFile(req, (photoURL) => {
+        photoURL = `/uploads/${photoURL}`;
+        models.Posts.update({
+            imageURL: photoURL
+        }, {
+            where: {
+                id: post_id
+            }
+        }).then( (updatePlant) => {
+            req.session.updatePlantId = '';
+            res.redirect(`/account/edit-post/${post_id}`)
+        })
+    })
   })
 
