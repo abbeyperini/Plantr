@@ -17,7 +17,8 @@ module.exports = (sequelize, DataTypes) => {
     common_name: DataTypes.STRING,
     scientific_name: DataTypes.STRING,
     body: DataTypes.TEXT,
-    plant_id: DataTypes.INTEGER
+    plant_id: DataTypes.INTEGER,
+    imageURL: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Posts',
