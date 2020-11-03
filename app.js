@@ -12,6 +12,7 @@ const { Op } = require('sequelize');
 const authenticate = require('./authenticate');
 const indexRoutes = require('./routes/index');
 const accountRoutes = require('./routes/account');
+const newsfeedRoutes = require('./routes/newsfeed')
 const secrets = require('./sessionSecret');
 
 global.__basedir = __dirname;
@@ -31,6 +32,7 @@ app.set('views', VIEW_PATH);
 app.set('view engine', 'mustache');
 app.use('/index', indexRoutes);
 app.use('/account', authenticate.authenticate, accountRoutes);
+app.use('/newsfeed', newsfeedRoutes)
 
 app.get('/', (req, res) => {
     res.redirect('/index')
