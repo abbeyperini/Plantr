@@ -16,14 +16,14 @@
             <nav>
                 <h3>Edit Post</h3>
                 <form method="POST" action="/account/update/post/upload" enctype="multipart/form-data">
-                    <input type="file" name="photo"/>
+                    <input type="file" name="photo" pattern=".*(\.[Jj][Pp][Gg]|\.[Gg][Ii][Ff]|\.[Jj][Pp][Ee][Gg]|\.[Pp][Nn][Gg])"/>
                     <button>Upload</button>
                 </form>
 
                 <form class="create-posts" method="POST" action="/account/edit-post">
-                    <input type="text" placeholder="Plant Name" name="common_name" value="{{common_name}}">
-                    <input type="text" placeholder="Scientific Name" name="scientific_name" value="{{scientific_name}}">
-                    <input type="text" placeholder="body" name="body" value="{{body}}">
+                    <input type="text" placeholder="Plant Name" name="common_name" value="{{common_name}}" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-]*">
+                    <input type="text" placeholder="Scientific Name" name="scientific_name" value="{{scientific_name}}" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-]*">
+                    <input type="text" placeholder="body" name="body" value="{{body}}" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-]*">
                     <input type="hidden" name="post_id" value={{id}}>
                     <button>Edit Post</button>
                 </form>

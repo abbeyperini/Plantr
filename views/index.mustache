@@ -13,8 +13,10 @@
             <h3>{{message}}</h3>
             <nav class="loginBox">
                 <form class="loginInputs" method="POST" action="/index/login">
-                    <input type="text" placeholder="username" name="username">
-                    <input type="password" placeholder="password" name="password">
+                    <input type="text" placeholder="username" name="username" pattern="^([a-zA-Z])[a-zA-Z_-]*[\w_-]*[\S]$|^([a-zA-Z])[0-9_-]*[\S]$|^[a-zA-Z]*[\S]$" required>
+                    <!-- Letters and numbers -->
+                    <input type="password" placeholder="password" name="password" pattern="^(?=.*\d).{4,8}$" required>
+                    <!-- Password must be between 4 and 8 digits long and include at least one numeric digit. -->
                     <button>Login</button>
                 </form>
             </nav>
