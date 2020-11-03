@@ -14,12 +14,11 @@
             {{#plants}}
                 <div class="account-plant">
                     <div class="image-cropper">
-                        <img class="plant-avatar" src={{imageURL}}>
+                        <a href="/account/details-plant/{{id}}"><img class="plant-avatar" src={{imageURL}}></a>
                     </div>
-                    <a href="/account/edit/{{id}}">
-                    <h2>{{common_name}}</h2></a>
+                    <a href="/account/edit/{{id}}"><h2>{{common_name}}</h2></a>
                     <p>{{scientific_name}}</p>
-                    <a href="/account/details-plant/{{id}}"><button>Post</button></a>
+                    <a href="/account/add-post/{{id}}"><button>Post</button></a>
                 </div>
             {{/plants}}
         </main>
