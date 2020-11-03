@@ -13,18 +13,18 @@
         <main class="create-plants">
             <h1>Create Plant</h1>
             <form method="POST" action="/account/create/upload" enctype="multipart/form-data">
-                <input type="file" name="photo"/>
+                <input type="file" name="photo" pattern=".*(\.[Jj][Pp][Gg]|\.[Gg][Ii][Ff]|\.[Jj][Pp][Ee][Gg]|\.[Pp][Nn][Gg])"/>
                 <button>Upload</button>
             </form>
 
             <img class="plant-avatar" alt="avatar" src="{{imageURL}}" width=300/>
 
             <form class="create-inputs" method="POST" action="/account/create-plant">
-                <input type="text" placeholder="Common Name" name="common_name">
-                <input type="text" placeholder="Scientific Name" name="scientific_name">
-                <input type="text" placeholder="Watering Schedule" name="watering_schedule">
-                <input type="text" placeholder="Light Requirement" name="light_requirement">
-                <input type="text" placeholder="Soil Type" name="soil_type">
+                <input type="text" placeholder="Common Name" name="common_name" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-]*" required>
+                <input type="text" placeholder="Scientific Name" name="scientific_name" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-]*" required>
+                <input type="text" placeholder="Watering Schedule" name="watering_schedule" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-]*">
+                <input type="text" placeholder="Light Requirement" name="light_requirement" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-]*">
+                <input type="text" placeholder="Soil Type" name="soil_type" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-]*">
                 <button>Add Plant</button>
             </form>
         </main>
