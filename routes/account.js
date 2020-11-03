@@ -77,6 +77,14 @@ router.post("/delete-post", (req, res) => {
     })
 })
 
+router.post('/create/post/upload', (req, res) => {
+    uploadFile(req, (postPhotoURL) => {
+        postPhotoURL = `/uploads/${postPhotoURL}`;
+        req.session.postPhotoURL = postPhotoURL;
+        res.render('create-plant', {postPhotoURL: postPhotoURL})
+      })
+})
+
 
 //Posting Comment
 router.post('/add-post', (req, res) => {
@@ -84,16 +92,18 @@ router.post('/add-post', (req, res) => {
     const scientific_name = req.body.scientific_name
     const body = req.body.body;
     const plant_id = req.body.plant_id;
+    const postPhotoURL = req.session.postPhotoURL;
     
     let posting = models.Posts.build({
         common_name: common_name,
         scientific_name: scientific_name,
         body: body,
         plant_id: plant_id,
+        imageURL: postPhotoURL
     })
     
     posting.save().then((savedPosting)=> {
-        console.log(savedPosting);
+        req.session.postPhotoURL = '';
         res.redirect(`/account/details-plant/${plant_id}`);
     })
 });
