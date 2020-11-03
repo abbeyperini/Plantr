@@ -33,8 +33,9 @@ router.get("/create", (req, res) => {
 router.post("/create/upload", (req, res) => {
     uploadFile(req, (photoURL) => {
         photoURL = `/uploads/${photoURL}`;
+        console.log(photoURL)
         req.session.photoURL = photoURL;
-        res.render('create-plant', {photoURL: photoURL})
+        res.render('create-plant', {Photo: photoURL})
       })
 })
 
@@ -86,7 +87,10 @@ router.post('/create/post/upload', (req, res) => {
     uploadFile(req, (postPhotoURL) => {
         postPhotoURL = `/uploads/${postPhotoURL}`;
         req.session.postPhotoURL = postPhotoURL;
-        res.redirect(`/account/add-post/${plant_id}`)
+        
+        models.Plants.findByPk(plant_id).then((plant) => {
+            res.render("add-post", {Plant: plant, photoURL: postPhotoURL})
+        })
       })
 })
 
@@ -191,7 +195,9 @@ function uploadFile(req, callback) {
             }
         }).then( (updatePlant) => {
             req.session.updatePlantId = '';
-            res.redirect(`/account/edit-post/${post_id}`)
+            models.Posts.findByPk(post_id).then((post) => {
+                res.render("edit-post", {Post: post})
+            })
         })
     })
   })
