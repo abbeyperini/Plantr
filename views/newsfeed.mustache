@@ -9,11 +9,12 @@
   </head>
   <body>
     {{> menu}}
-
-    {{#posts}}
-        
-
-    {{/posts}}
+      <main class="posts-main">
+        {{#Posts}}
+          <div><img src="{{imageURL}}" width=300></div>
+          <p>{{body}}</p>
+        {{/Posts}}
+      </main>
     {{> footer}}
   </body>   
 <html>

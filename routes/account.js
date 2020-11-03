@@ -121,7 +121,7 @@ router.get('/details-plant/:id', (req, res) => {
         include: [
             {
                 model: models.Posts,
-                as: 'plant_post'
+                
             }
         ]
     }).then( (plant) => {

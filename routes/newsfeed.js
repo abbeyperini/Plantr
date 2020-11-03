@@ -11,10 +11,14 @@ app.set("view engine", "mustache");
 module.exports = router;
 app.use("/styles", express.static("styles"));
 
-
-router.get('/', async (req, res) => {
-    let posts =  await models.Posts.findAll(
-        {order : [['createdAt', 'DESC']]}
-    )
-    res.render('newsfeed', {posts: posts})
-})
+router.get("/", async (req, res) => {
+  let posts = await models.Posts.findAll({
+    order: [["createdAt", "DESC"]],
+    include: {
+      model: models.Users,
+      attributes: ['id', 'username']
+    },
+  });
+  console.log(posts);
+  res.render("newsfeed", { Posts: posts });
+});
