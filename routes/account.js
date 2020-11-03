@@ -78,10 +78,12 @@ router.post("/delete-post", (req, res) => {
 })
 
 router.post('/create/post/upload', (req, res) => {
+    const plant_id = req.body.plant_id;
+
     uploadFile(req, (postPhotoURL) => {
         postPhotoURL = `/uploads/${postPhotoURL}`;
         req.session.postPhotoURL = postPhotoURL;
-        res.render('create-plant', {postPhotoURL: postPhotoURL})
+        res.redirect('/account')
       })
 })
 
@@ -138,7 +140,7 @@ function uploadFile(req, callback) {
   router.get("/add-post/:id", (req, res) => {
       const plant_id = req.params.plant_id;
 
-      models.Plants.findByPK(plant_id).then((plant) => {
+      models.Plants.findByPk(plant_id).then((plant) => {
           res.render("details", {plant: plant})
       })
   })
