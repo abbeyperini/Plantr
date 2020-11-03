@@ -20,6 +20,8 @@
                     <button>Upload</button>
                 </form>
 
+                <img class="photo-preview" alt="Plant Avatar" src="{{imageURL}}"/>
+
                 <form class="create-posts" method="POST" action="/account/edit-post">
                     <input type="text" placeholder="Plant Name" name="common_name" value="{{common_name}}" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*">
                     <input type="text" placeholder="Scientific Name" name="scientific_name" value="{{scientific_name}}" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*">

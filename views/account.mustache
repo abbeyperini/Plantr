@@ -21,6 +21,10 @@
                     <a href="/account/add-post/{{id}}"><button>Post</button></a>
                 </div>
             {{/plants}}
+
+            {{^plants}}
+                <a href="/account/create"><h1>Add some plants!</h1></a>
+            {{/plants}}
         </main>
         {{> footer}}
     </body>
