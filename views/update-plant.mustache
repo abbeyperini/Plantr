@@ -19,6 +19,8 @@
                     <button>Upload</button>
                 </form>
 
+                <img class="plant-avatar" alt="avatar" src="{{imageURL}}" width="300"/>
+
                 <form class="edit-form" method="POST" action="/account/update-plant">
                     <input type="hidden" value="{{id}}" name="plant_id">
                     <input type="text" placeholder="Common Name" name="common_name" value={{common_name}}>

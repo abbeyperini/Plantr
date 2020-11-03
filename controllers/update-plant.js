@@ -26,6 +26,6 @@ module.exports = (req, res) => {
       },
     }
   ).then((updatedPlant) => {
-    res.redirect("/account");
+    res.redirect(`/account/edit/${plant_id}`);
   });
 };
