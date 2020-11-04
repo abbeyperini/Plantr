@@ -15,9 +15,11 @@
         <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
 <!-- LikeBtn.com END --> }}
         <div class="container">
-            <div><button type="button" onClick="clicks++;updateClickCount();" id="push">💜</button></div>
+        <form method="POST" action="/likes">
+            <div><button type="button" onClick="clicks++;updateClickCount();" id="push">Like</button></div>
             <i class="mdi-action-favorite red-text text-lighten-1"></i> <a href="#">
             <div id="clickCount"></div></a>
+        <form>    
         </div>
 
         <script type="text/javascript">
