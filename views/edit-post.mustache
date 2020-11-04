@@ -15,7 +15,7 @@
             <h1>{{common_name}}</h1>
             <nav>
                 <h3>Edit Post</h3>
-                <form method="POST" action="/account/update/post/upload" enctype="multipart/form-data">
+                <form method="POST" action="/account/update/post/upload" enctype="multipart/form-data" class="edit-post-upload">
                     <input type="file" name="photo" pattern=".*(\.[Jj][Pp][Gg]|\.[Gg][Ii][Ff]|\.[Jj][Pp][Ee][Gg]|\.[Pp][Nn][Gg])"/>
                     <button>Upload</button>
                 </form>
@@ -33,7 +33,7 @@
             {{/Post}}
         </main>
         <footer>
-        <!-- {{> footer}} -->
+        {{> footer}}
         </footer>
     </body>
 </html>
