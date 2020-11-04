@@ -12,49 +12,37 @@
         {{> menu}}
         {{#Plant}}
         <main class="posts-main">
+            <div class="imageName">
                 <img src="{{imageURL}}" width=300>
                 <h2>{{common_name}}</h2>
+            </div>
             <div class="descriptionBox">
                 <p>{{scientific_name}}</p>
                 <p>{{watering_schedule}}</p>
                 <p>{{light_requirement}}</p>
                 <p>{{soil_type}}</p>
+                <a href="/account/add-post/{{id}}"><button>Add Post</button></a>
             </div>
-            <nav>
-                <h3>Add Post</h3>
-                <form method="POST" action="/account/create/post/upload" enctype="multipart/form-data">
-                    <input type="file" name="photo"/>
-                    <button>Upload</button>
-                </form>
-
-            <img class="plant-avatar" alt="avatar" src="{{imageURL}}" width="300"/>
-
-                <form class="create-posts" method="POST" action="/account/add-post">
-                    <input type="text" placeholder="Plant Name" name="common_name" value="{{common_name}}">
-                    <input type="text" placeholder="Scientific Name" name="scientific_name" value="{{scientific_name}}">
-                    <input type="text" placeholder="body" name="body">
-                    <input type="hidden" name="plant_id" value={{id}}>
-                    <button>Add Post</button>
-                </form>
-            <nav>
         </main>
         <aside class="show-posts">
-            {{#plant_post}}
+            {{#Posts}}
             <ul>
                 <li>
+                    <img src="{{imageURL}}" width="300">
                     <h2>{{plant}}<h2> 
                     <p>{{body}}</p>
+                    <a href="/account/edit-post/{{id}}"><button>Edit</button></a>
                     <form method="POST" action="/account/delete-post">
                         <input type="hidden" name= "post_id" value= "{{id}}">
                         <button>Delete</button>
                     </form>
                 </li>
             </ul>
-            {{/plant_post}}
+            {{/Posts}}
         </aside>
         {{/Plant}}
         <footer>
-        <!-- {{> footer}} -->
+        {{> footer}}
         </footer>
     </body>
 </html>

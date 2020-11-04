@@ -11,6 +11,36 @@ html {
     text-align: center;
 }
 
+body {
+    margin-top: 10%;
+}
+
+main {
+    margin-bottom: 40%;
+}
+
+li {
+    list-style-type: none;
+}
+
+input {
+    border-radius: 8px;
+}
+
+.posts-main {
+    margin-top: 10%;
+    margin-bottom: 50px;
+}
+
+.show-posts {
+    margin-bottom: 20%;
+}
+
+.posts-newsfeed {
+    margin-bottom: 20%;
+    margin-top: 20%
+}
+
 /* space cadet: #222E50
 teal blue: #007991
 polished pine: #439A86
@@ -45,6 +75,9 @@ button {
   width: 100%;
 }
 
+.add-post-main {
+    margin-top: 20%;
+}
 
 .loginMain {
     background-color: #BCD8C1;
@@ -59,10 +92,6 @@ button {
     border-radius: 8px;
 }
 
-.posts-main {
-    margin-top: 20%;
-}
-
 .loginBox {
     display: flex;
     justify-content: space-evenly;
@@ -70,7 +99,7 @@ button {
     text-align: center;
 }
 
-.loginMain input, .create-inputs input {
+.loginMain input, .create-inputs input, .create-posts input, .create-plants input {
     margin: 10px;
     margin-right: 0;
     padding: 5px;
@@ -83,6 +112,10 @@ button {
 .loginMain button, .create-inputs button {
     margin: 15px;
     margin-left: 10px;
+}
+
+.create-inputs button {
+    margin: 20px;
 }
 
 .loginInputs {
@@ -100,6 +133,7 @@ footer {
     align-items: center;
     background-color: #007991;
     width: 100%;
+    color: white;
 }
 
 .main-menu {
@@ -118,7 +152,7 @@ footer {
 }
 
 #footer-logo {
-    height: 100px;
+    height: 50px;
     padding: 5px;
 }
 
@@ -136,7 +170,7 @@ footer {
 
 .account-plant {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     margin: 10px;
@@ -145,10 +179,11 @@ footer {
     width: 92%;
     border-radius: 8px;
 }
+.photo-preview {
+    width: 300px;
+}
 
-
-.create-plants, .show-posts {
-
+.create-plants {
     margin: 1%;
     margin-bottom: 5%;
     padding-bottom: 3%;
@@ -158,7 +193,7 @@ h1 {
     padding: 20px;
 }
 
-.create-inputs {
+.create-inputs, .create-posts {
     margin: 1%;
     display: flex;
     flex-direction: column;
@@ -178,10 +213,11 @@ h1 {
 .update-plant-forms {
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 20px;
 }
 
-.update-plant-forms input {
+.update-plant-forms , .edit-post-upload input, .update-plant-forms input {
     margin: 15px;
     padding: 5px;
 }
@@ -190,9 +226,34 @@ h1 {
     margin: 10px;
 }
 
+.update-plant-file {
+    background-color: #E9D985;
+}
+
 .edit-form {
     display: flex;
     flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:active, a:visited {
+    color: white;
+  }
+
+.loginMain a:link, .loginMain a:active, .loginMain a:visited {
+    color: #222E50;
+}
+  
+a:hover, a:focus, button:hover, button:focus {
+    color: #BCD8C1;
+    cursor: pointer;
+}
+
+.main-plants a:hover, .main-plants a:focus, .loginMain a:hover, .loginMain a:focus {
+    color: #E9D985;
 }
 
 @media (min-width: 600px) {
@@ -219,10 +280,20 @@ h1 {
         margin: 20px;
     }
 
-
-    .main-plants, .main-edit, .posts-main {
-
+    .main-plants, .main-edit, .posts-main, .posts-newsfeed, .loginMain, .add-post-main {
         margin-top: 10%;
+    }
+
+    #footer-logo {
+        height: 100px;
+    }
+
+    .account-plant {
+        flex-direction: row;
+    }
+
+    .create-posts {
+        flex-direction: row;
     }
 }
 
@@ -252,18 +323,55 @@ h1 {
         flex-direction: row;
     }
     
-    .main-plants, .main-edit, .posts-main {
+    .main-plants, .main-edit, .posts-main, .posts-newsfeed, .loginMain, .add-post-main{
         margin-top: 7%;
     }
 
     .main-plants {
         width: 45%;
     }
+
+    #footer-logo {
+        height: 100px;
+    }
+
+    body {
+        margin-top: 1%;
+    }
+
+    .account-plant {
+        flex-direction: row;
+    }
+
+    .create-posts {
+        flex-direction: row;
+    }
 }
 
 @media (min-width: 1200px) {
 
     .update-plant-forms, .edit-form {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #footer-logo {
+        height: 100px;
+    }
+
+    body {
+        margin-top: 1%;
+    }
+
+    .add-post-main {
+        margin-top: 3%;
+    }
+
+    .account-plant {
+        flex-direction: row;
+    }
+
+    .create-posts {
         flex-direction: row;
     }
 }

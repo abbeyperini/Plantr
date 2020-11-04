@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'/>
+        <meta name='viewport' content='width=device-width' initial-scale='1.0' maximum-scale='1.0'/>
+        <title>Plantr</title>
+        <link rel="shortcut icon" href="/images/plantrLogo.svg" type="image/x-icon">
+        <link rel='stylesheet' href='/styles/styles.css'/>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        {{> menu}}
+        <main>
+            {{#Post}}
+            <h1>{{common_name}}</h1>
+            <nav>
+                <h3>Edit Post</h3>
+                <form method="POST" action="/account/update/post/upload" enctype="multipart/form-data" class="edit-post-upload">
+                    <input type="file" name="photo" pattern=".*(\.[Jj][Pp][Gg]|\.[Gg][Ii][Ff]|\.[Jj][Pp][Ee][Gg]|\.[Pp][Nn][Gg])"/>
+                    <button>Upload</button>
+                </form>
+
+                <img class="photo-preview" alt="Plant Avatar" src="{{imageURL}}"/>
+
+                <form class="create-posts" method="POST" action="/account/edit-post">
+                    <input type="text" placeholder="Plant Name" name="common_name" value="{{common_name}}" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*">
+                    <input type="text" placeholder="Scientific Name" name="scientific_name" value="{{scientific_name}}" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*">
+                    <input type="text" placeholder="body" name="body" value="{{body}}" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*">
+                    <input type="hidden" name="post_id" value={{id}}>
+                    <button>Edit Post</button>
+                </form>
+            <nav>
+            {{/Post}}
+        </main>
+        <footer>
+        {{> footer}}
+        </footer>
+    </body>
+</html>
