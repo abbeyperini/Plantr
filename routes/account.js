@@ -102,13 +102,15 @@ router.post('/add-post', (req, res) => {
     const body = req.body.body;
     const plant_id = req.body.plant_id;
     const postPhotoURL = req.session.postPhotoURL;
+    const user_id = req.session.userId
     
     let posting = models.Posts.build({
         common_name: common_name,
         scientific_name: scientific_name,
         body: body,
         plant_id: plant_id,
-        imageURL: postPhotoURL
+        imageURL: postPhotoURL,
+        user_id: user_id
     })
     
     posting.save().then((savedPosting)=> {
@@ -202,3 +204,18 @@ function uploadFile(req, callback) {
     })
   })
 
+router.post("/comment/add-comment", async (req, res) => {
+  const post_id = parseInt(req.body.post_id);
+  const body = req.body.body;
+
+  let comment = await models.Comments.build({
+    body: body,
+    post_id: post_id,
+  });
+
+  let savedComment = await comment.save();
+
+  if (savedComment) {
+    res.redirect(`/details-plant/${post_id}`);
+  }
+});
