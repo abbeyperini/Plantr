@@ -17,7 +17,9 @@
                 <button>Upload</button>
             </form>
 
-            <img class="photo-preview" src="{{Photo}}" alt="Plant Avatar">
+            <div class={{defaultDivClass}}><img class={{defaultClass}} alt="Plantr Logo" src="/images/plantrLogo.jpg"></div>
+
+            <div class={{photoDivClass}}><img class={{photoClass}} alt="Plant Avatar" src="{{Photo}}"/></div>
 
             <form class="create-inputs" method="POST" action="/account/create-plant">
                 <input type="text" placeholder="Common Name" name="common_name" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*" required>

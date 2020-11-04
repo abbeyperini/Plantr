@@ -59,16 +59,18 @@ button {
 .image-cropper {
     width: 100px;
     height: 100px;
-    /* position: relative; */
     overflow: hidden;
     border-radius: 50%;
 }
 
 .plant-avatar {
-  /* display: inline; */
   margin: 0 auto;
   height: 100%;
   width: 100%;
+}
+
+.account-plant img {
+    margin-left: -10px;
 }
 
 .add-post-main, .comments-main, .create-plants {
@@ -177,16 +179,13 @@ footer {
 .account-plant {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     margin: 10px;
     padding: 10px;
     background-color: #BCD8C1;
     width: 92%;
     border-radius: 8px;
-}
-.photo-preview {
-    width: 300px;
 }
 
 .create-plants {
@@ -339,6 +338,47 @@ h1 {
     margin: 20px;
 }
 
+.preview-image-hidden {
+    display: none;
+}
+
+.preview-image-shown {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.default-photo-shown {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.default-photo-hidden {
+    display: none;
+}
+
+.preview-image-cropper-shown {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.preview-image-cropper-hidden {
+    display: none;
+}
+
+.add-post-nav, .create-plants, .edit-post-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-post-main {
+    background-color: #BCD8C1;
+}
+
 a {
     text-decoration: none;
 }
@@ -384,7 +424,7 @@ a:hover, a:focus, button:hover, button:focus {
         margin: 20px;
     }
 
-    .main-plants, .main-edit, .posts-main, .posts-newsfeed, .loginMain, .add-post-main, .comments-main, .details-page {
+    .main-plants, .main-edit, .posts-main, .posts-newsfeed, .loginMain, .add-post-main, .comments-main, .details-page, main {
         margin-top: 10%;
     }
 
@@ -442,7 +482,7 @@ a:hover, a:focus, button:hover, button:focus {
         flex-direction: row;
     }
     
-    .main-plants, .main-edit, .posts-main, .posts-newsfeed, .loginMain, .add-post-main, .comments-main, .details-page, .create-plants{
+    .main-plants, .main-edit, .posts-main, .posts-newsfeed, .loginMain, .add-post-main, .comments-main, .details-page, .create-plants, main{
         margin-top: 7%;
     }
 
