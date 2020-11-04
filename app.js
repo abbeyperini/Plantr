@@ -33,8 +33,8 @@ app.set('views', VIEW_PATH);
 app.set('view engine', 'mustache');
 app.use('/index', indexRoutes);
 app.use('/account', authenticate.authenticate, accountRoutes);
-app.use('/newsfeed', newsfeedRoutes);
-app.use('/comment', commentRoutes);
+app.use('/newsfeed', authenticate.authenticate, newsfeedRoutes);
+app.use('/comment', authenticate.authenticate, commentRoutes);
 
 app.get('/', (req, res) => {
     res.redirect('/index')
