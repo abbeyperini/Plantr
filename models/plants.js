@@ -20,7 +20,10 @@ module.exports = (sequelize, DataTypes) => {
     watering_schedule: DataTypes.STRING,
     light_requirement: DataTypes.STRING,
     soil_type: DataTypes.STRING,
-    user_id: DataTypes.INTEGER,
+    user_id: {
+      allowNull: false,
+      type:DataTypes.INTEGER,
+    },
     imageURL: DataTypes.STRING
   }, {
     sequelize,

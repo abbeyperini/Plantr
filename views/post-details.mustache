@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset='UTF-8'/>
+        <meta name='viewport' content='width=device-width' initial-scale='1.0' maximum-scale='1.0'/>
+        <title>Plantr</title>
+        <link rel="shortcut icon" href="/images/plantrLogo.svg" type="image/x-icon">
+        <link rel='stylesheet' href='/styles/styles.css'/>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+
+        
+    
+    </head>
+        
+    
+    
+    
+    <body>
+        {{> menu}}
+
+        
+            <main class="comments-main">
+            {{#post}}
+                <h2>{{body}}</h2>
+             <h2>Drop a comment below!</h2>
+                    <form method="POST" action="/account/add-comment/{{id}}">
+                        <textarea type="text" name="body" placeholder="Comment">
+                        </textarea>
+                        <button>Submit</button>
+                    </form>
+                    
+                    <ul>
+                        {{#Comments}}
+                            <form method="POST" action="/account/post/{{post_id}}/comment/{{id}}/delete-comment">
+                            <li>
+                            <label>{{body}}</label>
+                            <button>Delete</button></a>
+                            </li>
+                            </form>
+                        {{/Comments}}
+            {{/post}}
+            </main>
+
+
+
+        {{> footer}}
+    </body>
+</html>

@@ -29,8 +29,8 @@
             <ul>
                 <li>
                     <img src="{{imageURL}}" width="300">
-                    <h2>{{plant}}<h2> 
-                    <p>{{body}}</p>
+                    <h2>{{plant}}<h2>
+                    <a href="/account/post-details/{{id}}"><p>{{body}}</p></a>
                     <a href="/account/edit-post/{{id}}"><button>Edit</button></a>
                     <form method="POST" action="/account/delete-post">
                         <input type="hidden" name= "post_id" value= "{{id}}">
