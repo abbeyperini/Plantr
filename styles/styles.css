@@ -49,6 +49,11 @@ input {
     margin-top: 20%
 }
 
+.container {
+    display:flex;
+    color: #007991;
+}
+
 /* space cadet: #222E50
 teal blue: #007991
 polished pine: #439A86

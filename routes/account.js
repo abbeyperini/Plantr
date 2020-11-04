@@ -264,3 +264,8 @@ router.post("/post/:post_id/comment/:id/delete-comment", (req, res) => {
     res.redirect(`/account/post-details/${post_id}`);
   });
 });
+
+
+router.get('/likes', (req, res) => {
+  res.render("test")
+})
