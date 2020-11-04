@@ -28,6 +28,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/styles', express.static('styles'));
 app.use('/images', express.static('images'));
 app.use('/uploads', express.static('uploads'));
+app.use('/js', express.static('js'));
 app.engine('mustache', mustacheExpress(VIEW_PATH + '/partials', '.mustache'));
 app.set('views', VIEW_PATH);
 app.set('view engine', 'mustache');

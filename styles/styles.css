@@ -400,6 +400,20 @@ a:hover, a:focus, button:hover, button:focus {
     color: #E9D985;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid,
+button:invalid {
+    background-color: #FAC338;
+}
+
 @media (min-width: 600px) {
     .loginMain {
         height: 400px;
