@@ -11,11 +11,7 @@
     {{> menu}}
       <main class="posts-newsfeed">
         {{#Posts}}
-          <div><img src="{{imageURL}}" width=300></div>
-          {{#User}}
-            {{username}}
-          {{/User}}
-          <p>{{body}}</p>
+          <a href="/account/post-details/{{id}}"><div><img class="newsfeed-image" src="{{imageURL}}" width=300></div></a>
         {{/Posts}}
       </main>
     <footer>
