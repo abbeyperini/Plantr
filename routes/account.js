@@ -25,7 +25,8 @@ module.exports = router;
 router.get("/", accountController);
 
 router.get("/create", (req, res) => {
-  res.render("create-plant");
+  res.render("create-plant", {photoClass: "preview-image-hidden", defaultClass: "default-photo-shown",
+  defaultDivClass: "preview-image-cropper-shown", photoDivClass: "preview-image-cropper-hidden"});
 });
 
 router.post("/create/upload", (req, res) => {
@@ -33,7 +34,8 @@ router.post("/create/upload", (req, res) => {
     photoURL = `/uploads/${photoURL}`;
     console.log(photoURL);
     req.session.photoURL = photoURL;
-    res.render("create-plant", { Photo: photoURL });
+    res.render("create-plant", {Photo: photoURL, photoClass: "preview-image-shown", defaultClass: "default-photo-hidden",
+    photoDivClass: "preview-image-cropper-shown", defaultDivClass: "preview-image-cropper-hidden"});
   });
 });
 
@@ -90,7 +92,9 @@ router.post("/create/post/upload", (req, res) => {
     req.session.postPhotoURL = postPhotoURL;
 
     models.Plants.findByPk(plant_id).then((plant) => {
-      res.render("add-post", { Plant: plant, photoURL: postPhotoURL });
+      res.render("add-post", {Plant: plant, photoURL: postPhotoURL, 
+        photoClass: "preview-image-shown", defaultClass: "default-photo-hidden", 
+        photoDivClass: "preview-image-cropper-shown", defaultDivClass: "preview-image-cropper-hidden"});
     });
   });
 });
@@ -101,8 +105,14 @@ router.post("/add-post", (req, res) => {
   const scientific_name = req.body.scientific_name;
   const body = req.body.body;
   const plant_id = req.body.plant_id;
-  const postPhotoURL = req.session.postPhotoURL;
   const user_id = req.session.userId;
+  let postPhotoURL = "";
+
+  if (req.session.postPhotoURL == "" || req.session.postPhotoURL == null) {
+      postPhotoURL = "/images/plantrLogo.jpg";
+  } else {
+      postPhotoURL = req.session.postPhotoURL;
+  }
 
   let posting = models.Posts.build({
     common_name: common_name,
@@ -152,7 +162,8 @@ router.get("/add-post/:id", (req, res) => {
   req.session.plant_id = plant_id;
 
   models.Plants.findByPk(plant_id).then((plant) => {
-    res.render("add-post", { Plant: plant });
+    res.render("add-post", {Plant: plant, photoClass: "preview-image-hidden", defaultClass: "default-photo-shown",
+    defaultDivClass: "preview-image-cropper-shown", photoDivClass: "preview-image-cropper-hidden"});
   });
 });
 

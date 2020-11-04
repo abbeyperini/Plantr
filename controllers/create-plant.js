@@ -7,7 +7,13 @@ module.exports = (req, res) => {
   const light_requirement = req.body.light_requirement;
   const soil_type = req.body.soil_type;
   const user_id = req.session.userId;
-  const photoURL = req.session.photoURL;
+  let photoURL = '';
+
+  if (req.session.photoURL == "" || req.session.photoURL == null) {
+    photoURL = "/images/plantrLogo.jpg"
+  } else {
+    photoURL = req.session.photoURL
+  }
 
   //creating plant object
   let plant = models.Plants.build({
