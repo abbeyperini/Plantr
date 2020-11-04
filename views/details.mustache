@@ -10,37 +10,42 @@
     </head>
     <body>
         {{> menu}}
-        {{#Plant}}
-        <main class="posts-main">
-            <div class="imageName">
-                <img src="{{imageURL}}" width=300>
-                <h2>{{common_name}}</h2>
-            </div>
+        <div class="detailed-plant">
+            {{#Plant}}
+            <main class="plant-main">
+                <div class="imageName">
+                    <img src="{{imageURL}}" width=300>
+                    <h2 class="details-plant-name">{{common_name}}</h2>
+                </div>
+            </main>
             <div class="descriptionBox">
-                <p>{{scientific_name}}</p>
-                <p>{{watering_schedule}}</p>
-                <p>{{light_requirement}}</p>
-                <p>{{soil_type}}</p>
+                <p>Scientific name: {{scientific_name}}</p>
+                <p>Watering schedule: {{watering_schedule}}</p>
+                <p>Light requirement: {{light_requirement}}</p>
+                <p>Soil type: {{soil_type}}</p>
                 <a href="/account/add-post/{{id}}"><button>Add Post</button></a>
             </div>
-        </main>
-        <aside class="show-posts">
-            {{#Posts}}
-            <ul>
-                <li>
-                    <img src="{{imageURL}}" width="300">
-                    <h2>{{plant}}<h2>
-                    <a href="/account/post-details/{{id}}"><p>{{body}}</p></a>
-                    <a href="/account/edit-post/{{id}}"><button>Edit</button></a>
-                    <form method="POST" action="/account/delete-post">
-                        <input type="hidden" name= "post_id" value= "{{id}}">
-                        <button>Delete</button>
-                    </form>
-                </li>
-            </ul>
-            {{/Posts}}
-        </aside>
-        {{/Plant}}
+            <aside class="show-posts">
+                {{#Posts}}
+                <ul>
+                    <li>
+                        <img src="{{imageURL}}" width="300">
+                        <div class="details-post-content">
+                            <a href="/account/post-details/{{id}}"><p>{{body}}</p></a>
+                            <div class="details-post-buttons">
+                                <a href="/account/edit-post/{{id}}"><button>Edit</button></a>
+                                <form method="POST" action="/account/delete-post">
+                                    <input type="hidden" name= "post_id" value= "{{id}}">
+                                    <button>Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                {{/Posts}}
+            </aside>
+            {{/Plant}}
+        </div>
         <footer>
         {{> footer}}
         </footer>

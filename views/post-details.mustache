@@ -6,51 +6,38 @@
         <link rel="shortcut icon" href="/images/plantrLogo.svg" type="image/x-icon">
         <link rel='stylesheet' href='/styles/styles.css'/>
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
-
-        
-    
     </head>
-        
-    
-    
-    
     <body>
         {{> menu}}
-
-        
-            <main class="comments-main">
+        <main class="comments-main">
             {{#post}}
+            <div class="detailed-post">
                 <img src='{{imageURL}}' width=300>
                 {{#User}}
                     <p>{{username}}</p>
                 {{/User}}
-                <p>{{body}}</p>
-                <br>
-            <h4>Comments</h4>
-            {{#Comments}}
-                <form method="POST" action="/account/post/{{post_id}}/comment/{{id}}/delete-comment">
-                    <li>
-                        <label>{{body}}</label>
-                        <button>Delete</button></a>
-                    </li>
-                </form>
-            {{/Comments}}
-
-            <br>
-             <h4>Drop a comment below!</h4>
-                    <form method="POST" action="/account/add-comment/{{id}}">
-                        <textarea type="text" name="body" placeholder="Comment">
-                        </textarea>
-                        <button>Submit</button>
+                <h3>{{body}}</h3>
+            </div>
+            <div class="detailed-post-comments">
+                <h4>Comments</h4>
+                {{#Comments}}
+                <li class="detailed-post-comment">
+                    <p>{{body}}</p>
+                    <form method="POST" action="/account/post/{{post_id}}/comment/{{id}}/delete-comment">
+                        <button>Delete</button>
                     </form>
-                    
-                    
-                        
+                </li>
+                {{/Comments}}
+            </div>
+            <div class="add-comment">
+                <h4>Drop a comment below!</h4>
+                <form method="POST" action="/account/add-comment/{{id}}">
+                    <input type="text" name="body" placeholder="Comment"></input>
+                    <button>Submit</button>
+                </form>
+            </div>            
             {{/post}}
-            </main>
-
-
-
+        </main>
         {{> footer}}
     </body>
 </html>

@@ -38,10 +38,6 @@ input {
     margin-bottom: 50px;
 }
 
-.show-posts {
-    margin-bottom: 20%;
-}
-
 .posts-newsfeed {
     margin-bottom: 20%;
     margin-top: 20%
@@ -92,6 +88,14 @@ button {
     margin: auto;
     margin-top: 20%;
     border-radius: 8px;
+}
+
+.posts-newsfeed {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
 }
 
 .loginBox {
@@ -237,6 +241,103 @@ h1 {
     display: flex;
     flex-direction: column;
 }
+.plant-main {
+    grid-area: plant-main;
+    margin-bottom: 0;
+}
+
+.show-posts {
+    margin-bottom: 20%;
+    grid-area: show-posts;
+}
+
+.descriptionBox {
+    grid-area: descriptionBox;
+}
+
+.detailed-plant {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr .5fr 2fr;
+    column-gap: 50px;
+    grid-template-areas:
+    "plant-main"
+    "descriptionBox"
+    "show-posts";
+    margin-top: 20%;
+    margin-bottom: 15%;
+    row-gap: 20px;
+    background-color: #BCD8C1;
+    border-radius: 8px;
+    padding-top: 30px;
+}
+
+.descriptionBox p {
+    margin: 5px;
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+.detailed-plant img {
+    width: 300px;
+    padding: 15px;
+}
+
+.details-plant-name {
+    font-size: 2em;
+    padding: 20px;
+}
+
+.details-post-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-post-buttons button {
+    margin: 10px;
+    padding: 5px;
+}
+
+.details-post-buttons {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.detailed-post {
+    margin-bottom: 20px;
+}
+
+.detailed-post h3 {
+    padding: 10px;
+}
+
+.detailed-post img {
+    margin: 20px;
+
+}
+
+.comments-main p, .comments-main button {
+    margin: 10px;
+}
+
+.detailed-post-comment {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #E9D985;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.add-comment {
+    margin: 20px;
+}
 
 a {
     text-decoration: none;
@@ -255,7 +356,7 @@ a:hover, a:focus, button:hover, button:focus {
     cursor: pointer;
 }
 
-.main-plants a:hover, .main-plants a:focus, .loginMain a:hover, .loginMain a:focus {
+.main-plants a:hover, .main-plants a:focus, .loginMain a:hover, .loginMain a:focus, .details-post-content a:hover, .details-post-content a:focus {
     color: #E9D985;
 }
 
@@ -283,8 +384,18 @@ a:hover, a:focus, button:hover, button:focus {
         margin: 20px;
     }
 
-    .main-plants, .main-edit, .posts-main, .posts-newsfeed, .loginMain, .add-post-main, .comments-main {
+    .main-plants, .main-edit, .posts-main, .posts-newsfeed, .loginMain, .add-post-main, .comments-main, .details-page {
         margin-top: 10%;
+    }
+
+    .posts-newsfeed {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .newsfeed-image {
+        width: 300px;
+        height: 300px;
+        object-fit: fill;
     }
 
     #footer-logo {
@@ -297,6 +408,10 @@ a:hover, a:focus, button:hover, button:focus {
 
     .create-posts {
         flex-direction: row;
+    }
+
+    .detailed-plant {
+        margin-top: 10%;
     }
 }
 
@@ -326,12 +441,8 @@ a:hover, a:focus, button:hover, button:focus {
         flex-direction: row;
     }
     
-    .main-plants, .main-edit, .posts-main, .posts-newsfeed, .loginMain, .add-post-main, .comments-main{
+    .main-plants, .main-edit, .posts-main, .posts-newsfeed, .loginMain, .add-post-main, .comments-main, .details-page, .create-plants{
         margin-top: 7%;
-    }
-
-    .main-plants {
-        width: 45%;
     }
 
     #footer-logo {
@@ -348,6 +459,50 @@ a:hover, a:focus, button:hover, button:focus {
 
     .create-posts {
         flex-direction: row;
+    }
+
+    .posts-newsfeed {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .detailed-plant {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 50px;
+        grid-template-areas:
+        "plant-main show-posts"
+        "descriptionBox show-posts";
+        margin-top: 10%;
+        margin-bottom: 10%;
+        padding-left: 30px;
+    }
+
+    .detailed-post {
+        grid-area: detailed-post;
+    }
+
+    .detailed-post-comments {
+        grid-area: detailed-post-comments;
+        margin-top: 20px;
+        margin-right: 30px;
+    }
+
+    .add-comment {
+        grid-area: add-comment;
+    }
+
+    .comments-main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 50px;
+        grid-template-areas:
+        "detailed-post detailed-post-comments"
+        "detailed-post add-comment";
+        margin-top: 10%;
+        margin-bottom: 10%;
+        padding-left: 30px;
     }
 }
 
@@ -366,8 +521,12 @@ a:hover, a:focus, button:hover, button:focus {
         margin-top: 1%;
     }
 
-    .add-post-main, .comments-main, .create-plants {
+    .add-post-main, .create-plants, .details-page {
         margin-top: 3%;
+    }
+    
+    .comments-main {
+        margin-top: 5%;
     }
 
     .account-plant {
@@ -376,5 +535,25 @@ a:hover, a:focus, button:hover, button:focus {
 
     .create-posts {
         flex-direction: row;
+    }
+
+    .posts-newsfeed {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .details-page {
+        margin-bottom: 5%;
+    }
+
+    .detailed-plant {
+        margin-top: 5%;
+        column-gap: 200px;
+        padding-left: 50px;;
+    }
+}
+
+@media (min-width: 1600px) {
+    .posts-newsfeed {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 }
