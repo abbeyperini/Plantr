@@ -23,9 +23,9 @@
                 <img class="photo-preview" alt="Plant Avatar" src="{{photoURL}}"/>
 
                 <form class="create-posts" method="POST" action="/account/add-post">
-                    <input type="text" placeholder="Plant Name" name="common_name" value="{{common_name}}" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*">
-                    <input type="text" placeholder="Scientific Name" name="scientific_name" value="{{scientific_name}}" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*">
-                    <input type="text" placeholder="body" name="body" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*">
+                    <input type="text" placeholder="Plant Name" name="common_name" value="{{common_name}}" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*" required>
+                    <input type="text" placeholder="Scientific Name" name="scientific_name" value="{{scientific_name}}" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*" required>
+                    <input type="text" placeholder="body" name="body" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*" required>
                     <input type="hidden" name="plant_id" value={{id}}>
                     <button>Add Post</button>
                 </form>
