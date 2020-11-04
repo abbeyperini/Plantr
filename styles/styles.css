@@ -32,6 +32,14 @@ input {
     margin-bottom: 50px;
 }
 
+/* commments styles BEGIN */
+.comments-main {
+    margin-top: 7%;
+}
+
+
+/* commments styles END */
+
 .show-posts {
     margin-bottom: 20%;
 }
