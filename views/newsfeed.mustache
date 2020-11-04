@@ -12,6 +12,9 @@
       <main class="posts-newsfeed">
         {{#Posts}}
           <div><img src="{{imageURL}}" width=300></div>
+          {{#User}}
+            {{username}}
+          {{/User}}
           <p>{{body}}</p>
         {{/Posts}}
       </main>
