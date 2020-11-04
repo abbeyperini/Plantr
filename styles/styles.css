@@ -4,6 +4,12 @@
     box-sizing: border-box;
     }
 
+/* space cadet: #222E50
+teal blue: #007991
+polished pine: #439A86
+cambridge blue: #BCD8C1
+flax: #E9D985 */
+
 html {
     font-family: 'Comfortaa', cursive;
     background-color: #E9D985;
@@ -32,14 +38,6 @@ input {
     margin-bottom: 50px;
 }
 
-/* commments styles BEGIN */
-.comments-main {
-    margin-top: 7%;
-}
-
-
-/* commments styles END */
-
 .show-posts {
     margin-bottom: 20%;
 }
@@ -48,12 +46,6 @@ input {
     margin-bottom: 20%;
     margin-top: 20%
 }
-
-/* space cadet: #222E50
-teal blue: #007991
-polished pine: #439A86
-cambridge blue: #BCD8C1
-flax: #E9D985 */
 
 body {
     display: flex;
@@ -83,8 +75,10 @@ button {
   width: 100%;
 }
 
-.add-post-main {
+.add-post-main, .comments-main, .create-plants {
     margin-top: 20%;
+    background-color: #BCD8C1;
+    border-radius: 8px;
 }
 
 .loginMain {
@@ -195,6 +189,7 @@ footer {
     margin: 1%;
     margin-bottom: 5%;
     padding-bottom: 3%;
+    background-color: #BCD8C1;
 }
 
 h1 {
@@ -225,16 +220,16 @@ h1 {
     padding: 20px;
 }
 
-.update-plant-forms , .edit-post-upload input, .update-plant-forms input {
+.update-plant-forms , .edit-post-upload input, .update-plant-forms input, .add-post-file {
     margin: 15px;
     padding: 5px;
 }
 
-.update-plant-forms button {
+.update-plant-forms button, .create-posts button {
     margin: 10px;
 }
 
-.update-plant-file {
+.update-plant-file, .add-post-file, .create-plant-file {
     background-color: #E9D985;
 }
 
@@ -288,7 +283,7 @@ a:hover, a:focus, button:hover, button:focus {
         margin: 20px;
     }
 
-    .main-plants, .main-edit, .posts-main, .posts-newsfeed, .loginMain, .add-post-main {
+    .main-plants, .main-edit, .posts-main, .posts-newsfeed, .loginMain, .add-post-main, .comments-main {
         margin-top: 10%;
     }
 
@@ -331,7 +326,7 @@ a:hover, a:focus, button:hover, button:focus {
         flex-direction: row;
     }
     
-    .main-plants, .main-edit, .posts-main, .posts-newsfeed, .loginMain, .add-post-main{
+    .main-plants, .main-edit, .posts-main, .posts-newsfeed, .loginMain, .add-post-main, .comments-main{
         margin-top: 7%;
     }
 
@@ -371,7 +366,7 @@ a:hover, a:focus, button:hover, button:focus {
         margin-top: 1%;
     }
 
-    .add-post-main {
+    .add-post-main, .comments-main, .create-plants {
         margin-top: 3%;
     }
 
