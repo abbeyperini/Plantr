@@ -60,6 +60,7 @@ router.post("/update/upload", (req, res) => {
   });
 });
 
+
 //creating a plant to the plant table
 router.post("/create-plant", createPlantController);
 
