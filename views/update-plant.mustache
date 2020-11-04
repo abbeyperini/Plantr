@@ -18,16 +18,16 @@
                     <img class="plant-avatar" alt="Plant Avatar" src="{{imageURL}}"/>
                 </div>
                 <form method="POST" action="/account/update/upload" enctype="multipart/form-data">
-                    <input type="file" name="photo" pattern=".*(\.[Jj][Pp][Gg]|\.[Gg][Ii][Ff]|\.[Jj][Pp][Ee][Gg]|\.[Pp][Nn][Gg])" class="update-plant-file"/>
+                    <input class="fileValidity" oninput="setCustomValidity('')" type="file" name="photo" pattern=".*(\.[Jj][Pp][Gg]|\.[Gg][Ii][Ff]|\.[Jj][Pp][Ee][Gg]|\.[Pp][Nn][Gg])" class="update-plant-file"/>
                     <button>Upload</button>
                 </form>
                 <form class="edit-form" method="POST" action="/account/update-plant">
                     <input type="hidden" value="{{id}}" name="plant_id">
-                    <input type="text" placeholder="Common Name" name="common_name" value={{common_name}} pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*">
-                    <input type="text" placeholder="Scientific Name" name="scientific_name" value={{scientific_name}} pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*">
-                    <input type="text" placeholder="Watering Schedule" name="watering_schedule" value={{watering_schedule}} pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*">
-                    <input type="text" placeholder="Light Requirement" name="light_requirement" value={{light_requirement}} pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*">
-                    <input type="text" placeholder="Soil Type" name="soil_type" value={{soil_type}} pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*">
+                    <input class="input-validity" oninput="setCustomValidity('')" type="text" placeholder="Common Name" name="common_name" value={{common_name}} pattern="[\s\w\[\]`!@#$%\^&*()=:+'-]*">
+                    <input class="input-validity" oninput="setCustomValidity('')" type="text" placeholder="Scientific Name" name="scientific_name" value={{scientific_name}} pattern="[\s\w\[\]`!@#$%\^&*()=:+'-]*">
+                    <input class="input-validity" oninput="setCustomValidity('')" type="text" placeholder="Watering Schedule" name="watering_schedule" value={{watering_schedule}} pattern="[\s\w\[\]`!@#$%\^&*()=:+'-]*">
+                    <input class="input-validity" oninput="setCustomValidity('')" type="text" placeholder="Light Requirement" name="light_requirement" value={{light_requirement}} pattern="[\s\w\[\]`!@#$%\^&*()=:+'-]*">
+                    <input class="input-validity" oninput="setCustomValidity('')" type="text" placeholder="Soil Type" name="soil_type" value={{soil_type}} pattern="[\s\w\[\]`!@#$%\^&*()=:+'-]*">
                     <button>Edit Plant</button>
                 </form>
                 <form class= "delete-form" method="POST" action="/account/delete-plant">
