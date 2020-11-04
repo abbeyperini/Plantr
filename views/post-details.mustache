@@ -20,23 +20,32 @@
         
             <main class="comments-main">
             {{#post}}
-                <h2>{{body}}</h2>
-             <h2>Drop a comment below!</h2>
+                <img src='{{imageURL}}' width=300>
+                {{#User}}
+                    <p>{{username}}</p>
+                {{/User}}
+                <p>{{body}}</p>
+                <br>
+            <h4>Comments</h4>
+            {{#Comments}}
+                <form method="POST" action="/account/post/{{post_id}}/comment/{{id}}/delete-comment">
+                    <li>
+                        <label>{{body}}</label>
+                        <button>Delete</button></a>
+                    </li>
+                </form>
+            {{/Comments}}
+
+            <br>
+             <h4>Drop a comment below!</h4>
                     <form method="POST" action="/account/add-comment/{{id}}">
                         <textarea type="text" name="body" placeholder="Comment">
                         </textarea>
                         <button>Submit</button>
                     </form>
                     
-                    <ul>
-                        {{#Comments}}
-                            <form method="POST" action="/account/post/{{post_id}}/comment/{{id}}/delete-comment">
-                            <li>
-                            <label>{{body}}</label>
-                            <button>Delete</button></a>
-                            </li>
-                            </form>
-                        {{/Comments}}
+                    
+                        
             {{/post}}
             </main>
 

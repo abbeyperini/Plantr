@@ -210,7 +210,6 @@ router.post("/update/post/upload", (req, res) => {
   });
 });
 
-
 //post details routes
 router.get("/post-details/:id", async (req, res) => {
   const post_id = req.params.id;
@@ -223,6 +222,10 @@ router.get("/post-details/:id", async (req, res) => {
           model: models.Users,
           attributes: ["username", "id"],
         },
+      },
+      {
+        model: models.Users,
+        attributes: ["username", "id"],
       },
     ],
   });
@@ -254,10 +257,10 @@ router.post("/post/:post_id/comment/:id/delete-comment", (req, res) => {
   const comment_id = req.params.id;
 
   models.Comments.destroy({
-      where: {
-          id: comment_id
-      }
+    where: {
+      id: comment_id,
+    },
   }).then(() => {
-      res.redirect(`/account/post-details/${post_id}`)
-  })
+    res.redirect(`/account/post-details/${post_id}`);
+  });
 });
