@@ -13,6 +13,14 @@
             {{#post}}
             <div class="detailed-post">
                 <img src='{{imageURL}}' width=300>
+                
+                <form method="POST" action="/account/post/{{id}}/like">
+                    <button>Like</button>
+                </form>
+
+                <p>{{likes}}</p>
+
+                
                 {{#User}}
                     <p>{{username}}</p>
                 {{/User}}
@@ -38,6 +46,12 @@
             </div>            
             {{/post}}
         </main>
+        <script type="text/javascript">
+        var clicks = 0;
+        function updateClickCount() {
+            document.getElementById("clickCount").innerHTML = clicks;
+        }
+    </script>
         {{> footer}}
     </body>
 </html>

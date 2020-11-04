@@ -241,8 +241,16 @@ router.get("/post-details/:id", async (req, res) => {
       },
     ],
   });
+
+  //displaying count of likes
+  let likes = await models.Likes.count({
+    where: {
+      post_id
+    }
+  })
+  console.log(likes)
   console.log(post);
-  res.render("post-details", { post: post });
+  res.render("post-details", { post: post, likes: likes});
 });
 
 router.post("/add-comment/:id", async (req, res) => {
@@ -276,3 +284,44 @@ router.post("/post/:post_id/comment/:id/delete-comment", (req, res) => {
     res.redirect(`/account/post-details/${post_id}`);
   });
 });
+
+
+router.get('/likes', (req, res) => {
+  res.render("test")
+})
+
+//route to get likes
+router.post('/post/:post_id/like', async(req, res) => {
+  const post_id = req.params.post_id;
+  const user_id = req.session.userId;
+
+  console.log(post_id)
+  console.log(user_id)
+
+  let like = await models.Likes.findOne({
+    where: {
+      post_id: post_id,
+      user_id: user_id
+    }
+  })
+  if (like === null) {
+    await models.Likes.create({
+      post_id,
+      user_id
+    });
+
+  
+
+  } else {
+      //where i destroy the like because it already exists if not null
+      await models.Likes.destroy({
+        where: {
+          post_id: post_id,
+          user_id: user_id
+        }
+      })
+      
+  }
+
+  res.redirect(`/account/post-details/${post_id}`);
+})

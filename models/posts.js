@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
       models.Posts.belongsTo(models.Plants, { foreignKey: "id" });
       models.Posts.belongsTo(models.Users, { foreignKey: "user_id" });
       models.Posts.hasMany(models.Comments, { foreignKey: "post_id" });
+
+      models.Posts.hasMany(models.Likes, {foreignKey: 'post_id'});
     }
   }
   Posts.init(
