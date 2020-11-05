@@ -18,7 +18,7 @@
                     <img class="plant-avatar" alt="Plant Avatar" src="{{imageURL}}"/>
                 </div>
                 <form method="POST" action="/account/update/upload" enctype="multipart/form-data">
-                    <input class="fileValidity" oninput="setCustomValidity('')" type="file" name="photo" pattern=".*(\.[Jj][Pp][Gg]|\.[Gg][Ii][Ff]|\.[Jj][Pp][Ee][Gg]|\.[Pp][Nn][Gg])" class="update-plant-file"/>
+                    <input class="fileValidity" oninput="setCustomValidity('')" type="file" name="photo" pattern=".*(\.[Jj][Pp][Gg]|\.[Gg][Ii][Ff]|\.[Jj][Pp][Ee][Gg]|\.[Pp][Nn][Gg])" id="update-plant-file"/>
                     <button>Upload</button>
                 </form>
                 <form class="edit-form" method="POST" action="/account/update-plant">
