@@ -61,9 +61,9 @@ Why an app such as this can be helpful:
 ## Contact
 
 
-Abbey Perini - (https://github.com/abbeyperini) Github
-Cristina Hernandez - (https://github.com/cristinahdz29) Github
-Juan Trinidad - (https://github.com/juantrinidad14) Github
+* Abbey Perini - (https://github.com/abbeyperini) Github
+* Cristina Hernandez - (https://github.com/cristinahdz29) Github
+* Juan Trinidad - (https://github.com/juantrinidad14) Github
 
 
 
