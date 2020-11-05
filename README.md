@@ -67,7 +67,7 @@ Why an app such as this can be helpful:
 
 
 
-Project Link:https://github.com/cristinahdz29/Plantr
+Project Link: https://app-plantr.herokuapp.com
 
 
 
