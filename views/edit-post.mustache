@@ -16,7 +16,7 @@
             <nav class="edit-post-nav">
                 <h3>Edit Post</h3>
                 <form method="POST" action="/account/update/post/upload" enctype="multipart/form-data" class="edit-post-upload">
-                    <input class="fileValidity" oninput="setCustomValidity('')" type="file" name="photo" pattern=".*(\.[Jj][Pp][Gg]|\.[Gg][Ii][Ff]|\.[Jj][Pp][Ee][Gg]|\.[Pp][Nn][Gg])"/>
+                    <input class="fileValidity" id="edit-post-file" oninput="setCustomValidity('')" type="file" name="photo" pattern=".*(\.[Jj][Pp][Gg]|\.[Gg][Ii][Ff]|\.[Jj][Pp][Ee][Gg]|\.[Pp][Nn][Gg])"/>
                     <button>Upload</button>
                 </form>
 
