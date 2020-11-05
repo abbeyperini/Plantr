@@ -1,9 +1,10 @@
-const secrets = require('../secrets')
+require('dotenv').config()
+const DATABASE_PASS = process.env.DATABASE_PASS;
 
 module.exports = {
   "development": {
     "username": "edwyzknr",
-    "password": secrets,
+    "password": DATABASE_PASS,
     "database": "edwyzknr",
     "host": "lallah.db.elephantsql.com",
     "dialect": "postgres"
@@ -17,7 +18,7 @@ module.exports = {
   },
   "production": {
     "username": "edwyzknr",
-    "password": secrets,
+    "password": DATABASE_PASS,
     "database": "edwyzknr",
     "host": "lallah.db.elephantsql.com",
     "dialect": "postgres"
