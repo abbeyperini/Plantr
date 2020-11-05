@@ -1,58 +1,22 @@
-# Plantr
 # <p align="center">Plantr
 Plantr is a social media platform where users are able to create an account to share plants information</p>
-
-<!--
-*** Reuse this template to avoid retyping. Do a search and replace for the following that relate to you:
-*** github_username, repo_name, twitter_handle, email
--->
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables along with a few blank ones just needing content
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use. Your editor may have an extension availabale. VSCode does for sure. You can add badges like ordinary snippets by pressing a few keys.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-# <h2 align="center">![Visitor Count](https://profile-counter.glitch.me/{NathanNOSudo}/count.svg) Thank you for stopping by!
-
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/crisitinadz29/Plantr">
-    <img src="PlantrLogo.png">
+    <img src="/images/PlantrLogo.png">
   </a>
 
   <h3 align="center">Plantr Project</h3><!-- YOUR_TITLE-->
-    
-  <p align="center"><!-- YOUR_SHORT_DESCRIPTION -->
-**DigitalCrafts Houston Full-Stack Developer** This is a project created by three members of the Immersive program week 4 course-work. This is a backend project that uses NobeJS,Javascript,CSS,mustache, and database where users are able to add,view comment, upload photo, and much more about their plants. During week 7-8 we covered nobeJS,Express Routing, Server Side page, SQL,PG-Promise, Sequelize ORM, and Sequelize relationships."
-    <br />
-    <a href="https://github.com/cristinahdz29/Plantr"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/cristinahdz29/Plantr">View Demo</a>
-    ·
-    <a href="https://github.com/cristinahdz29/Plantr">Report Bug</a>
-    ·
-    <a href="https://github.com/cristinahdz29/Plantr">Request Feature</a>
-  </p>
-</p>
-
-
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
-* [Getting Started](#getting-started)
-  * [Installation](#installation)
 * [Usage](#usage)
 * [Videos And Screenshots](#videos-and-screenshots)
-* [Roadmap](#roadmap)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
@@ -63,58 +27,31 @@ Plantr is a social media platform where users are able to create an account to s
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-I put this together to show what a detailed README is like. This README is written and styled in Markdown.  You can edit this eitehr in the browser or your code editor. VScode does have a Markdown extension which will show you the syntax highlighting.
+Our passion for plants have inspired us to built an app that allow other plant parents to share information about their plants. In this application not only users will have access but also anyone who is interested in becoming part of the plant parent community. Our goal is to ensure our plant parent use this app as resource to increase their plant knowledge and experience. 
 
-Why doing this detailed README is important:
-* Recruiters who looks at your project might not know how to reade code.
-* You an reuse it over and over again. Save time and work on your projects more by just editing this to match your next project!
-* You should element DRY principles to the rest of your life :smile:
+Why an app such as this can be helpful:
+* It will raise awareness towards environmental topics.
+* An accesible database for education purpose for plant parents and future plant parents.
+* A community that shares same interest regarding plants.
 
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`
+
 
 
 ### Built With
 * NobeJS
 * JavaScript
 * CSS
-* Mustache
+* ElephantSQL
+* PostreSQL
 
-
-<!-- GETTING STARTED -->
-## Getting Started
-You should explain how to get your project up and running locally. EXAMPLE: To get a local copy up and running follow these simple steps.
-
-
-### Installation
-
-1. Clone to local machine
-```sh
-git clone https://github.com/cristinahdz29/Plantr
-```
-2. Install NPM packages
-```sh
-npm install mustache-express
-npm install express
-nmp install install -g sequelize-cli
-npm install brycpt
-
-```
-3. 
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
-<img src="code1">
-<img src="code 2">
-<img src="code3">
-
+* Intract with other Plantr users by commenting and liking plant post while enriching your knowledge.
 ## Videos and Screenshots
-
-<img src="code1">
+<img src="/images/login.png">
 <img src="code 2">
 <img src="code3">
 
@@ -123,9 +60,9 @@ npm install brycpt
 ## Contact
 
 
-Abbey Perini - () Email (https://github.com/abbeyperini) Github
-Cristina Hernandez - cristinahdz29@gmail.com - Email (https://github.com/cristinahdz29) Github
-Juan Trinidad - juan_trinidad14@hotmail.com - Email (https://github.com/juantrinidad14) Github
+Abbey Perini - (https://github.com/abbeyperini) Github
+Cristina Hernandez - (https://github.com/cristinahdz29) Github
+Juan Trinidad - (https://github.com/juantrinidad14) github
 
 
 
