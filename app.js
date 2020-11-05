@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
     res.redirect('/index')
 })
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log("Server is running...");
 });
 
