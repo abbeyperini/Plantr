@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      models.Plants.belongsTo(models.Users, {as: 'plant', foreignKey: 'user_id'})
-      models.Plants.hasMany(models.Posts, {as: 'plant_post', foreignKey: 'plant_id'})
+      models.Plants.belongsTo(models.Users, { foreignKey: 'user_id'})
+      models.Plants.hasMany(models.Posts, { foreignKey: 'plant_id'})
     }
   };
   Plants.init({
@@ -20,7 +20,10 @@ module.exports = (sequelize, DataTypes) => {
     watering_schedule: DataTypes.STRING,
     light_requirement: DataTypes.STRING,
     soil_type: DataTypes.STRING,
-    user_id: DataTypes.INTEGER,
+    user_id: {
+      allowNull: false,
+      type:DataTypes.INTEGER,
+    },
     imageURL: DataTypes.STRING
   }, {
     sequelize,

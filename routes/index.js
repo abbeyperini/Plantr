@@ -88,3 +88,7 @@ router.get('/sign-out', (req, res) => {
     req.session.isAuthenticated = false;
     res.redirect('/')
 })
+
+router.get("/about-us" , (req,res) =>{
+    res.render('about-us')
+})

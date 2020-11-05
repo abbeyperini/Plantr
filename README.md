@@ -1,5 +1,5 @@
 # <p align="center">Plantr
-Plantr is a social media platform where users are able to create an account share plants information</p>
+Plantr is a social media platform where users are able to create an account to share plants information</p>
 
 <!-- PROJECT LOGO -->
 <br />
@@ -9,7 +9,6 @@ Plantr is a social media platform where users are able to create an account shar
   </a>
 
   <h3 align="center">Plantr Project</h3><!-- YOUR_TITLE-->
-    
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -77,7 +76,7 @@ Project Link:https://github.com/cristinahdz29/Plantr
  
  * Abbey Perini (https://github.com/abbeyperini) Github
  * Cristina Hernandez - (https://github.com/cristinahdz29) Github
- * Juan Trinidad - (https://github.com/juantrinidad14) github
+ * Juan Trinidad - (https://github.com/juantrinidad14) Github
 
 
 

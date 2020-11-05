@@ -13,21 +13,25 @@
         <main class="create-plants">
             <h1>Create Plant</h1>
             <form method="POST" action="/account/create/upload" enctype="multipart/form-data">
-                <input type="file" name="photo" pattern=".*(\.[Jj][Pp][Gg]|\.[Gg][Ii][Ff]|\.[Jj][Pp][Ee][Gg]|\.[Pp][Nn][Gg])"/>
+                <input class="fileValidity" oninput="setCustomValidity('')" class="create-plant-file" type="file" name="photo" pattern=".*(\.[Jj][Pp][Gg]|\.[Gg][Ii][Ff]|\.[Jj][Pp][Ee][Gg]|\.[Pp][Nn][Gg])"/>
                 <button>Upload</button>
             </form>
 
-            <img class="plant-avatar" alt="avatar" src="{{imageURL}}" width=300/>
+            <div class={{defaultDivClass}}><img class={{defaultClass}} alt="Plantr Logo" src="/images/plantrLogo.jpg"></div>
+
+            <div class={{photoDivClass}}><img class={{photoClass}} alt="Plant Avatar" src="{{Photo}}"/></div>
 
             <form class="create-inputs" method="POST" action="/account/create-plant">
-                <input type="text" placeholder="Common Name" name="common_name" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*" required>
-                <input type="text" placeholder="Scientific Name" name="scientific_name" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*" required>
-                <input type="text" placeholder="Watering Schedule" name="watering_schedule" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*">
-                <input type="text" placeholder="Light Requirement" name="light_requirement" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*">
-                <input type="text" placeholder="Soil Type" name="soil_type" pattern="[\w\[\]`!@#$%\^&*()={}:;<>+'-\s]*">
+                <input class="input-validity" oninput="setCustomValidity('')" type="text" placeholder="Common Name" name="common_name" pattern="[\s\w\[\]`!@#$%\^&*()=:+'-]*" required>
+                <input class="input-validity" oninput="setCustomValidity('')" type="text" placeholder="Scientific Name" name="scientific_name" pattern="[\s\w\[\]`!@#$%\^&*()=:+'-]*" required>
+                <input class="input-validity" oninput="setCustomValidity('')" type="text" placeholder="Watering Schedule" name="watering_schedule" pattern="[\s\w\[\]`!@#$%\^&*()=:+'-]*">
+                <input class="input-validity" oninput="setCustomValidity('')" type="text" placeholder="Light Requirement" name="light_requirement" pattern="[\s\w\[\]`!@#$%\^&*()=:+'-]*">
+                <input class="input-validity" oninput="setCustomValidity('')" type="text" placeholder="Soil Type" name="soil_type" pattern="[\s\w\[\]`!@#$%\^&*()=:+'-]*">
                 <button>Add Plant</button>
             </form>
         </main>
+        <footer>
         {{> footer}}
+        </footer>
     </body>
 </html>

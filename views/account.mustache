@@ -21,7 +21,13 @@
                     <a href="/account/add-post/{{id}}"><button>Post</button></a>
                 </div>
             {{/plants}}
+
+            {{^plants}}
+                <a id="add-plants-account-message" href="/account/create"><h1>Add some plants!</h1></a>
+            {{/plants}}
         </main>
+        <footer>
         {{> footer}}
+        </footer>
     </body>
 </html>

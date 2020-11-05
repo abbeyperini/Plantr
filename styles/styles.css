@@ -4,12 +4,58 @@
     box-sizing: border-box;
     }
 
+/* space cadet: #222E50
+teal blue: #007991
+polished pine: #439A86
+cambridge blue: #BCD8C1
+flax: #E9D985 */
+
 html {
     font-family: 'Comfortaa', cursive;
     background-color: #E9D985;
     color: #222E50;
     text-align: center;
 }
+
+body {
+    margin-top: 10%;
+}
+
+main {
+    margin-bottom: 40%;
+}
+
+li {
+    list-style-type: none;
+}
+
+input {
+    border-radius: 8px;
+}
+
+.posts-main {
+    margin-top: 10%;
+    margin-bottom: 50px;
+}
+
+.posts-newsfeed {
+    margin-bottom: 20%;
+    margin-top: 20%
+}
+
+.container {
+    display:flex;
+    color: #007991;
+}
+
+ .likes-div {
+     display: flex;
+     align-items: center;
+     margin-left: 3%;
+     margin-top: -20px;
+     padding: 10px;
+ }
+
 
 /* space cadet: #222E50
 teal blue: #007991
@@ -33,20 +79,27 @@ button {
 .image-cropper {
     width: 100px;
     height: 100px;
-    /* position: relative; */
     overflow: hidden;
     border-radius: 50%;
 }
 
 .plant-avatar {
-  /* display: inline; */
   margin: 0 auto;
   height: 100%;
   width: 100%;
 }
 
+.account-plant img {
+    margin-left: -10px;
+}
 
-.loginMain {
+.add-post-main, .comments-main, .create-plants {
+    margin-top: 20%;
+    background-color: #BCD8C1;
+    border-radius: 8px;
+}
+
+.loginMain, .registerMain {
     background-color: #BCD8C1;
     display: flex;
     flex-direction: column;
@@ -56,11 +109,26 @@ button {
     width: 300px;
     margin: auto;
     margin-top: 20%;
+    padding-top: 180px;
     border-radius: 8px;
+    padding-bottom: 160px;
 }
 
-.posts-main {
-    margin-top: 20%;
+.registerMain {
+    padding-top: 200px;
+    padding-bottom: 180px;
+}
+
+.guestLogin {
+    margin: 2%;
+}
+
+.posts-newsfeed {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
 }
 
 .loginBox {
@@ -70,19 +138,35 @@ button {
     text-align: center;
 }
 
-.loginMain input, .create-inputs input {
+.loginMain input, .create-inputs input, .create-posts input, .create-plants input, .registerMain input {
     margin: 10px;
     margin-right: 0;
     padding: 5px;
 }
 
-.loginMain p {
+.loginMain p, .registerMain p {
     margin: 10%;
 }
 
-.loginMain button, .create-inputs button {
+.loginMain button, .create-inputs button, .registerMain button {
     margin: 15px;
     margin-left: 10px;
+}
+
+.loginLogo, .registerLogo {
+    margin: 1%;
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.loginLogo h1 {
+    margin-top: 10%;
+}
+
+.create-inputs button {
+    margin: 20px;
 }
 
 .loginInputs {
@@ -100,6 +184,7 @@ footer {
     align-items: center;
     background-color: #007991;
     width: 100%;
+    color: white;
 }
 
 .main-menu {
@@ -118,7 +203,7 @@ footer {
 }
 
 #footer-logo {
-    height: 100px;
+    height: 50px;
     padding: 5px;
 }
 
@@ -136,8 +221,8 @@ footer {
 
 .account-plant {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     margin: 10px;
     padding: 10px;
@@ -146,19 +231,18 @@ footer {
     border-radius: 8px;
 }
 
-
-.create-plants, .show-posts {
-
+.create-plants {
     margin: 1%;
     margin-bottom: 5%;
     padding-bottom: 3%;
+    background-color: #BCD8C1;
 }
 
 h1 {
     padding: 20px;
 }
 
-.create-inputs {
+.create-inputs, .create-posts {
     margin: 1%;
     display: flex;
     flex-direction: column;
@@ -178,28 +262,225 @@ h1 {
 .update-plant-forms {
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 20px;
 }
 
-.update-plant-forms input {
+.update-plant-forms , .edit-post-upload input, .update-plant-forms input, .add-post-file {
     margin: 15px;
     padding: 5px;
 }
 
-.update-plant-forms button {
+.update-plant-forms button, .create-posts button {
     margin: 10px;
+}
+
+.update-plant-file, .add-post-file, .create-plant-file {
+    background-color: #E9D985;
 }
 
 .edit-form {
     display: flex;
     flex-direction: column;
 }
+.plant-main {
+    grid-area: plant-main;
+    margin-bottom: 0;
+}
+
+.show-posts {
+    margin-bottom: 20%;
+    grid-area: show-posts;
+}
+
+.descriptionBox {
+    grid-area: descriptionBox;
+}
+
+.detailed-plant {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr .5fr 2fr;
+    column-gap: 50px;
+    grid-template-areas:
+    "plant-main"
+    "descriptionBox"
+    "show-posts";
+    margin-top: 20%;
+    margin-bottom: 15%;
+    row-gap: 20px;
+    background-color: #BCD8C1;
+    border-radius: 8px;
+    padding-top: 30px;
+}
+
+.descriptionBox p {
+    margin: 5px;
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+.detailed-plant img {
+    width: 300px;
+    padding: 15px;
+}
+
+.details-plant-name {
+    font-size: 2em;
+    padding: 20px;
+}
+
+.details-post-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.details-post-buttons button {
+    margin: 10px;
+    padding: 5px;
+}
+
+.details-post-buttons {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.detailed-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.detailed-post h3 {
+    padding: 10px;
+}
+
+.detailed-post img {
+    margin: 20px;
+
+}
+
+.comments-main p, .comments-main button {
+    margin: 10px;
+}
+
+.detailed-post-comment {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #E9D985;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.add-comment {
+    margin: 20px;
+}
+
+.preview-image-hidden {
+    display: none;
+}
+
+.preview-image-shown {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.default-photo-shown {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.default-photo-hidden {
+    display: none;
+}
+
+.preview-image-cropper-shown {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.preview-image-cropper-hidden {
+    display: none;
+}
+
+.add-post-nav, .create-plants, .edit-post-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-post-main {
+    background-color: #BCD8C1;
+}
+
+#like-logo {
+    width: 30px;
+    height: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:link, a:active, a:visited {
+    color: white;
+  }
+
+.loginMain a:link, .loginMain a:active, .loginMain a:visited, .registerMain a:link, .registerMain a:active, .registerMain a:visited {
+    color: #222E50;
+}
+  
+a:hover, a:focus, button:hover, button:focus {
+    color: #BCD8C1;
+    cursor: pointer;
+}
+
+.main-plants a:hover, .main-plants a:focus, .loginMain a:hover, .loginMain a:focus, .registerMain a:hover, .registerMain a:focus, .details-post-content a:hover, .details-post-content a:focus {
+    color: #E9D985;
+}
+
+#add-plants-account-message:hover, #add-plants-account-message:focus {
+    color: #BCD8C1;
+}
+
+#add-plants-account-message {
+    font-size: 2em;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid,
+button:invalid {
+    background-color: #FAC338;
+}
 
 @media (min-width: 600px) {
-    .loginMain {
+    .loginMain, .registerMain {
         height: 400px;
         width: 600px;
         margin-top: 10%;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
     .loginBox {
@@ -211,23 +492,52 @@ h1 {
         flex-direction: row;
     }
 
-    .loginMain p {
+    .loginMain p, .registerMain p {
         margin: 5%;
     }
 
-    .loginMain input {
+    .loginMain input, .registerMain input {
         margin: 20px;
     }
 
-
-    .main-plants, .main-edit, .posts-main {
-
+    .main-plants, .main-edit, .posts-main, .posts-newsfeed, .loginMain, .registerMain, .add-post-main, .comments-main, .details-page, main {
         margin-top: 10%;
+    }
+
+    .posts-newsfeed {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .newsfeed-image {
+        width: 300px;
+        height: 300px;
+        object-fit: fill;
+        border-radius: 8px;
+    }
+
+    #footer-logo {
+        height: 100px;
+    }
+
+    .account-plant {
+        flex-direction: row;
+    }
+
+    .create-posts {
+        flex-direction: row;
+    }
+
+    .detailed-plant {
+        margin-top: 10%;
+    }
+
+    #add-plants-account-message {
+        font-size: 3em;
     }
 }
 
 @media (min-width: 900px) {
-    .loginMain {
+    .loginMain, .registerMain {
         height: 500px;
         width: 800px;
     }
@@ -240,11 +550,11 @@ h1 {
         flex-direction: row;
     }
 
-    .loginMain p {
+    .loginMain p, .registerMain p {
         margin: 5%;
     }
 
-    .loginMain input {
+    .loginMain input, .registerMain input {
         margin: 20px;
     }
 
@@ -252,12 +562,68 @@ h1 {
         flex-direction: row;
     }
     
-    .main-plants, .main-edit, .posts-main {
+    .main-plants, .main-edit, .posts-main, .posts-newsfeed, .loginMain, .registerMain, .add-post-main, .comments-main, .details-page, .create-plants, main{
         margin-top: 7%;
     }
 
-    .main-plants {
-        width: 45%;
+    #footer-logo {
+        height: 100px;
+    }
+
+    body {
+        margin-top: 1%;
+    }
+
+    .account-plant {
+        flex-direction: row;
+    }
+
+    .create-posts {
+        flex-direction: row;
+    }
+
+    .posts-newsfeed {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .detailed-plant {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 50px;
+        grid-template-areas:
+        "plant-main show-posts"
+        "descriptionBox show-posts";
+        margin-top: 10%;
+        margin-bottom: 10%;
+        padding-left: 30px;
+    }
+
+    .detailed-post {
+        grid-area: detailed-post;
+    }
+
+    .detailed-post-comments {
+        grid-area: detailed-post-comments;
+        margin-top: 20px;
+        margin-right: 30px;
+    }
+
+    .add-comment {
+        grid-area: add-comment;
+    }
+
+    .comments-main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 50px;
+        grid-template-areas:
+        "detailed-post detailed-post-comments"
+        "detailed-post add-comment";
+        margin-top: 10%;
+        margin-bottom: 10%;
+        padding-left: 30px;
     }
 }
 
@@ -265,5 +631,50 @@ h1 {
 
     .update-plant-forms, .edit-form {
         flex-direction: row;
+        align-items: center;
+    }
+
+    #footer-logo {
+        height: 100px;
+    }
+
+    body {
+        margin-top: 1%;
+    }
+
+    .add-post-main, .create-plants, .details-page {
+        margin-top: 3%;
+    }
+    
+    .comments-main {
+        margin-top: 5%;
+    }
+
+    .account-plant {
+        flex-direction: row;
+    }
+
+    .create-posts {
+        flex-direction: row;
+    }
+
+    .posts-newsfeed {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .details-page {
+        margin-bottom: 5%;
+    }
+
+    .detailed-plant {
+        margin-top: 5%;
+        column-gap: 200px;
+        padding-left: 50px;;
+    }
+}
+
+@media (min-width: 1600px) {
+    .posts-newsfeed {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 }

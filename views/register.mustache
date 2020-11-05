@@ -9,19 +9,28 @@
         <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
-        <main class="loginMain">
+        <main class="registerMain">
             <h3>{{message}}</h3>
+             <div class="registerLogo">
+                <img src="/images/plantrLogo.svg" alt="Plantr Logo" width=100>
+                <h1>Plantr</h1>
+            </div>
             <nav class="loginBox">
                 <form class="loginInputs" method="POST" action="/index/register/user">
-                    <input type="text" placeholder="username" name="username" pattern="^([a-zA-Z])[a-zA-Z_-]*[\w_-]*[\S]$|^([a-zA-Z])[0-9_-]*[\S]$|^[a-zA-Z]*[\S]$" required>
+
+                    <input id="registerUsername" oninput="setCustomValidity('')" type="text" placeholder="username" name="username" pattern="^([a-zA-Z])[a-zA-Z_-]*[\w_-]*[\S]$|^([a-zA-Z])[0-9_-]*[\S]$|^[a-zA-Z]*[\S]$" required>
                     <!-- Letters and numbers -->
-                    <input type="text" placeholder="password" name="password" pattern="^(?=.*\d).{4,8}$" required>
+                    <input id="registerPassword" oninput="setCustomValidity('')" type="text" placeholder="password" name="password" pattern="^(?=.*\d).{4,8}$" required>
                     <!-- Password must be between 4 and 8 digits long and include at least one numeric digit. -->
+                    
                     <button>Register</button>
                 </form>
             </nav>
             <p>Already have a username? <a href='/index'>Login</a></p>
         </main>
+        <footer>
         {{> footer}}
+        </footer>
     </body>
+    <script src="/js/validity.js"></script>
 </html>

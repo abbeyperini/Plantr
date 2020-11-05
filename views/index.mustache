@@ -10,18 +10,31 @@
     </head>
     <body>
         <main class="loginMain">
+            <div class="loginLogo">
+                <img src="/images/plantrLogo.svg" alt="Plantr Logo" width=100>
+                <h1>Plantr</h1>
+            </div>
             <h3>{{message}}</h3>
             <nav class="loginBox">
                 <form class="loginInputs" method="POST" action="/index/login">
-                    <input type="text" placeholder="username" name="username" pattern="^([a-zA-Z])[a-zA-Z_-]*[\w_-]*[\S]$|^([a-zA-Z])[0-9_-]*[\S]$|^[a-zA-Z]*[\S]$" required>
+                    <input id="loginUsername" oninput="setCustomValidity('')" type="text" placeholder="username" name="username" pattern="^([a-zA-Z])[a-zA-Z_-]*[\w_-]*[\S]$|^([a-zA-Z])[0-9_-]*[\S]$|^[a-zA-Z]*[\S]$" required>
                     <!-- Letters and numbers -->
-                    <input type="password" placeholder="password" name="password" pattern="^(?=.*\d).{4,8}$" required>
+                    <input id="loginPassword" oninput="setCustomValidity('')" type="password" placeholder="password" name="password" pattern="^(?=.*\d).{4,8}$" required>
                     <!-- Password must be between 4 and 8 digits long and include at least one numeric digit. -->
                     <button>Login</button>
                 </form>
             </nav>
             <p>Need a username? <a href='/index/register'>Register</a></p>
         </main>
+        <form method="POST" action="/index/login" class="guestLogin">
+            <input type="hidden" name="username" value="guest">
+            <input type="hidden" name="password" value="pass123">
+            <label>Login as guest:</label> 
+            <button>Login</button>
+        </form>
+        <footer>
         {{> footer}}
+        <footer>
     </body>
+    <script src="/js/validity.js"></script>
 </html>
