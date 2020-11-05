@@ -243,6 +243,12 @@ router.get("/post-details/:id", async (req, res) => {
     ],
   });
 
+  let likes = await models.Likes.count({
+    where: {
+      post_id
+    }
+  })
+
   //displaying count of likes
   let like = await models.Likes.findOne({
     where: {
@@ -251,36 +257,12 @@ router.get("/post-details/:id", async (req, res) => {
     }
   })
 
-  if (like === null) {
-    await models.Likes.create({
-      post_id,
-      user_id
-    });
-
-    let likes = await models.Likes.count({
-      where: {
-        post_id
-      }
-    })
-
-    res.render("post-details", {post: post, likes: likes, imgSrc: "/images/plantrLogo.svg"})
+  if (like === null) {           
+    res.render("post-details", {post: post, likes: likes, imgSrc: "/images/plantrLogoGrey.svg"})
 
   } else {
-      //where i destroy the like because it already exists if not null
-      await models.Likes.destroy({
-        where: {
-          post_id: post_id,
-          user_id: user_id
-        }
-      })
 
-      let likes = await models.Likes.count({
-        where: {
-          post_id
-        }
-      })
-
-      res.render("post-details", {post: post, likes: likes, imgSrc: "/images/plantrLogoGrey.svg"})
+      res.render("post-details", {post: post, likes: likes, imgSrc: "/images/plantrLogo.svg"})
   }
 });
 

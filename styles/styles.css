@@ -266,7 +266,7 @@ h1 {
     padding: 20px;
 }
 
-.update-plant-forms , .edit-post-upload input, .update-plant-forms input, .add-post-file {
+.update-plant-forms , .edit-post-upload input, .update-plant-forms input, #add-post-file {
     margin: 15px;
     padding: 5px;
 }
@@ -275,7 +275,7 @@ h1 {
     margin: 10px;
 }
 
-.update-plant-file, .add-post-file, .create-plant-file {
+#update-plant-file, #add-post-file, #create-plant-file, #edit-post-file {
     background-color: #E9D985;
 }
 
