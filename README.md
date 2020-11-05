@@ -63,7 +63,7 @@ Why an app such as this can be helpful:
 
 Abbey Perini - (https://github.com/abbeyperini) Github
 Cristina Hernandez - (https://github.com/cristinahdz29) Github
-Juan Trinidad - (https://github.com/juantrinidad14) github
+Juan Trinidad - (https://github.com/juantrinidad14) Github
 
 
 
