@@ -14,11 +14,13 @@
             <div class="detailed-post">
                 <img src='{{imageURL}}' width=300>
                 
+                <div class='likes-div'>
                 <form method="POST" action="/account/post/{{id}}/like">
-                    <button>Like</button>
+                    <button id='like-logo'>Like</button>
                 </form>
-
-                <p>{{likes}}</p>
+                
+                <p>{{likes}} likes</p>
+                </div>
 
                 
                 {{#User}}
