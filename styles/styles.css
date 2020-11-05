@@ -457,7 +457,7 @@ a:hover, a:focus, button:hover, button:focus {
 }
 
 #add-plants-account-message {
-    font-size: 3em;
+    font-size: 2em;
 }
 
 input:focus,
@@ -529,6 +529,10 @@ button:invalid {
 
     .detailed-plant {
         margin-top: 10%;
+    }
+
+    #add-plants-account-message {
+        font-size: 3em;
     }
 }
 
