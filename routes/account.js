@@ -225,6 +225,7 @@ router.post("/update/post/upload", (req, res) => {
 //post details routes
 router.get("/post-details/:id", async (req, res) => {
   const post_id = req.params.id;
+  const user_id = req.session.userId
 
   let post = await models.Posts.findByPk(post_id, {
     include: [
@@ -243,14 +244,44 @@ router.get("/post-details/:id", async (req, res) => {
   });
 
   //displaying count of likes
-  let likes = await models.Likes.count({
+  let like = await models.Likes.findOne({
     where: {
-      post_id
+      post_id: post_id,
+      user_id: user_id
     }
   })
-  console.log(likes)
-  console.log(post);
-  res.render("post-details", { post: post, likes: likes});
+
+  if (like === null) {
+    await models.Likes.create({
+      post_id,
+      user_id
+    });
+
+    let likes = await models.Likes.count({
+      where: {
+        post_id
+      }
+    })
+
+    res.render("post-details", {post: post, likes: likes, imgSrc: "/images/plantrLogo.svg"})
+
+  } else {
+      //where i destroy the like because it already exists if not null
+      await models.Likes.destroy({
+        where: {
+          post_id: post_id,
+          user_id: user_id
+        }
+      })
+
+      let likes = await models.Likes.count({
+        where: {
+          post_id
+        }
+      })
+
+      res.render("post-details", {post: post, likes: likes, imgSrc: "/images/plantrLogoGrey.svg"})
+  }
 });
 
 router.post("/add-comment/:id", async (req, res) => {
@@ -295,8 +326,21 @@ router.post('/post/:post_id/like', async(req, res) => {
   const post_id = req.params.post_id;
   const user_id = req.session.userId;
 
-  console.log(post_id)
-  console.log(user_id)
+  let post = await models.Posts.findByPk(post_id, {
+    include: [
+      {
+        model: models.Comments,
+        include: {
+          model: models.Users,
+          attributes: ["username", "id"],
+        },
+      },
+      {
+        model: models.Users,
+        attributes: ["username", "id"],
+      },
+    ],
+  });
 
   let like = await models.Likes.findOne({
     where: {
@@ -310,7 +354,13 @@ router.post('/post/:post_id/like', async(req, res) => {
       user_id
     });
 
-  
+    let likes = await models.Likes.count({
+      where: {
+        post_id
+      }
+    })
+
+    res.render("post-details", {post: post, likes: likes, imgSrc: "/images/plantrLogo.svg"})
 
   } else {
       //where i destroy the like because it already exists if not null
@@ -320,8 +370,13 @@ router.post('/post/:post_id/like', async(req, res) => {
           user_id: user_id
         }
       })
-      
-  }
 
-  res.redirect(`/account/post-details/${post_id}`);
+      let likes = await models.Likes.count({
+        where: {
+          post_id
+        }
+      })
+
+      res.render("post-details", {post: post, likes: likes, imgSrc: "/images/plantrLogoGrey.svg"})
+  }
 })

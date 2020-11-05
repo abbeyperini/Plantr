@@ -16,7 +16,7 @@
                 
                 <div class='likes-div'>
                 <form method="POST" action="/account/post/{{id}}/like">
-                    <button id='like-logo'>Like</button>
+                    <input type="image" src={{imgSrc}} id='like-logo'>
                 </form>
                 
                 <p>{{likes}} likes</p>
@@ -42,7 +42,7 @@
             <div class="add-comment">
                 <h4>Drop a comment below!</h4>
                 <form method="POST" action="/account/add-comment/{{id}}">
-                    <input type="text" name="body" placeholder="Comment"></input>
+                    <input type="text" name="body" placeholder="Comment" pattern="[\s\w\[\]`!@#$%\^&*()=:+'-]*"></input>
                     <button>Submit</button>
                 </form>
             </div>            
