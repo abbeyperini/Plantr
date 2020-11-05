@@ -48,6 +48,14 @@ Why an app such as this can be helpful:
 
 
 
+
+### Installation
+
+1. Clone to local machine
+```sh
+git clone https://github.com/cristinahdz29/plantr.git
+```
+
 <!-- USAGE EXAMPLES -->
 ## Usage
 * Interact with other Plantr users by creating, commenting, and liking plant posts all while enriching your own knowledge of plant care.
