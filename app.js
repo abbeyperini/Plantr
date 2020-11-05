@@ -1,4 +1,6 @@
-const PORT = process.env.PORT || 8080
+require('dotenv').config();
+const PORT = process.env.PORT || 8080;
+const SESSION_PASS = process.env.SESSION_PASS;
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -14,12 +16,11 @@ const indexRoutes = require('./routes/index');
 const accountRoutes = require('./routes/account');
 const newsfeedRoutes = require('./routes/newsfeed');
 const commentRoutes =  require('./routes/comment');
-const secrets = require('./sessionSecret');
 
 global.__basedir = __dirname;
 
 app.use(session({
-    secret: secrets,
+    secret: SESSION_PASS,
     resave: false,
     saveUninitialized: true,
 }));
@@ -44,5 +45,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log("Server is running...");
 });
-
-
