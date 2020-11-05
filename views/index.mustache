@@ -10,6 +10,10 @@
     </head>
     <body>
         <main class="loginMain">
+            <div class="loginLogo">
+                <img src="/images/plantrLogo.svg" alt="Plantr Logo" width=100>
+                <h1>Plantr</h1>
+            </div>
             <h3>{{message}}</h3>
             <nav class="loginBox">
                 <form class="loginInputs" method="POST" action="/index/login">
@@ -22,6 +26,12 @@
             </nav>
             <p>Need a username? <a href='/index/register'>Register</a></p>
         </main>
+        <form method="POST" action="/index/login" class="guestLogin">
+            <input type="hidden" name="username" value="guest">
+            <input type="hidden" name="password" value="pass123">
+            <label>Login as guest:</label> 
+            <button>Login</button>
+        </form>
         <footer>
         {{> footer}}
         <footer>
