@@ -11,7 +11,7 @@ Plantr is a social media platform where users can upload photos and provide desc
     <img src="/images/plantrLogo.png">
   </a>
 
-  <h3 align="center">Plantr Project</h3><!-- YOUR_TITLE-->
+  <h3 align="center">Plantr</h3><!-- YOUR_TITLE-->
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
