@@ -1,4 +1,8 @@
 .DS_Store
+secrets.js
+config.json
+.env
+sessionSecret.js
 uploads/*
 !uploads/emptyFile.txt
 # Logs
