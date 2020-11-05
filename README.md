@@ -8,10 +8,10 @@ Plantr is a social media platform where users can upload photos and provide desc
 <br />
 <p align="center">
   <a href="https://github.com/crisitinadz29/Plantr">
-    <img src="/images/plantrLogo.png">
+    <img src="/images/plantrHeader.png">
   </a>
 
-  <h3 align="center">Plantr</h3><!-- YOUR_TITLE-->
+  <h3 align="center">Plantr Project</h3><!-- YOUR_TITLE-->
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
