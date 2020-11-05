@@ -1,6 +1,6 @@
 # Plantr
 # <p align="center">Plantr
-Plantr is a social media platform where users are able to create an account share plants information</p>
+Plantr is a social media platform where users are able to create an account to share plants information</p>
 
 <!--
 *** Reuse this template to avoid retyping. Do a search and replace for the following that relate to you:
@@ -28,7 +28,7 @@ Plantr is a social media platform where users are able to create an account shar
   <h3 align="center">Plantr Project</h3><!-- YOUR_TITLE-->
     
   <p align="center"><!-- YOUR_SHORT_DESCRIPTION -->
-**DigitalCrafts Houston Full-Stack Developer** This is a project created by three members of the Immersive program week 4 course-work. This is a backend project that uses NobeJS,Javascript,CSS,mustache, and database where users are able to add,view comment, upload photo, and much more about their plant. During week 7-8 we covered nobeJS,Express Routing, Server Side page, SQL,PG-Promise, Sequelize ORM, and Sequelize relationships."
+**DigitalCrafts Houston Full-Stack Developer** This is a project created by three members of the Immersive program week 4 course-work. This is a backend project that uses NobeJS,Javascript,CSS,mustache, and database where users are able to add,view comment, upload photo, and much more about their plants. During week 7-8 we covered nobeJS,Express Routing, Server Side page, SQL,PG-Promise, Sequelize ORM, and Sequelize relationships."
     <br />
     <a href="https://github.com/cristinahdz29/Plantr"><strong>Explore the docs »</strong></a>
     <br />
@@ -124,8 +124,8 @@ npm install brycpt
 
 
 Abbey Perini - () Email (https://github.com/abbeyperini) Github
-Cristina Hernandez - () Email (https://github.com/cristinahdz29) Github
-Juan Trinidad - juan_trinidad14@hotmail.com - Email (https://github.com/juantrinidad14) github
+Cristina Hernandez - cristinahdz29@gmail.com - Email (https://github.com/cristinahdz29) Github
+Juan Trinidad - juan_trinidad14@hotmail.com - Email (https://github.com/juantrinidad14) Github
 
 
 
@@ -139,7 +139,7 @@ Project Link:https://github.com/cristinahdz29/Plantr
  
  * Abbey Perini (https://github.com/abbeyperini) Github
  * Cristina Hernandez - (https://github.com/cristinahdz29) Github
- * Juan Trinidad - (https://github.com/juantrinidad14) github
+ * Juan Trinidad - (https://github.com/juantrinidad14) Github
 
 
 

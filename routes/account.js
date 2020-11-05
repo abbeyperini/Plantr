@@ -286,9 +286,9 @@ router.post("/post/:post_id/comment/:id/delete-comment", (req, res) => {
 });
 
 
-router.get('/likes', (req, res) => {
-  res.render("test")
-})
+// router.get('/likes', (req, res) => {
+//   res.render("test")
+// })
 
 //route to get likes
 router.post('/post/:post_id/like', async(req, res) => {
