@@ -452,6 +452,14 @@ a:hover, a:focus, button:hover, button:focus {
     color: #E9D985;
 }
 
+#add-plants-account-message:hover, #add-plants-account-message:focus {
+    color: #BCD8C1;
+}
+
+#add-plants-account-message {
+    font-size: 3em;
+}
+
 input:focus,
 select:focus,
 textarea:focus,
