@@ -1,11 +1,14 @@
 # <p align="center">Plantr
-Plantr is a social media platform where users are able to create an account to share plants information</p>
+Plantr is a social media platform where users can upload photos and provide descriptions of their plants and share them with other users. They can also view, comment and like posts from fellow Plantr users. Anyone can create an account by registering an email address and selecting a username.
+
+
+</p>
 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <a href="https://github.com/crisitinadz29/Plantr">
-    <img src="/images/PlantrLogo.png">
+    <img src="/images/plantrHeader.png">
   </a>
 
   <h3 align="center">Plantr Project</h3><!-- YOUR_TITLE-->
@@ -25,31 +28,31 @@ Plantr is a social media platform where users are able to create an account to s
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Our passion for plants have inspired us to built an app that allow other plant parents to share information about their plants. In this application not only users will have access but also anyone who is interested in becoming part of the plant parent community. Our goal is to ensure our plant parent use this app as resource to increase their plant knowledge and experience. 
+<p align='center'><img src="/images/plantrLogo.png"></img></p>
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
+Our passion for plants inspired us to create an app that enables fellow plant lovers to upload and share images and information about their plants. In this application users are able to create a collection of their plants and make posts. Plantr users can also view, like, and comment on posts belonging to other users. Our goal with this app is to create a space where new and existing plant parents can interact and share their love for all things plants.
 
 Why an app such as this can be helpful:
-* It will raise awareness towards environmental topics.
-* An accesible database for education purpose for plant parents and future plant parents.
-* A community that shares same interest regarding plants.
+* Raises awareness towards environmental topics.
+* Serves as an educational resource for new and existing plant owners.
+* Provides access to a community that is passionate about plants and their care.
 
 
 
 
 
 ### Built With
-* NobeJS
+* NodeJS
 * JavaScript
 * CSS
 * ElephantSQL
-* PostreSQL
+* PostgreSQL
 
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-* Intract with other Plantr users by commenting and liking plant post while enriching your knowledge.
+* Interact with other Plantr users by creating, commenting, and liking plant posts all while enriching your own knowledge of plant care.
 ## Videos and Screenshots
 <img src="/images/login.png">
 <img src="code 2">
@@ -60,13 +63,13 @@ Why an app such as this can be helpful:
 ## Contact
 
 
-Abbey Perini - (https://github.com/abbeyperini) Github
-Cristina Hernandez - (https://github.com/cristinahdz29) Github
-Juan Trinidad - (https://github.com/juantrinidad14) github
+* Abbey Perini - (https://github.com/abbeyperini) Github
+* Cristina Hernandez - (https://github.com/cristinahdz29) Github
+* Juan Trinidad - (https://github.com/juantrinidad14) Github
 
 
 
-Project Link:https://github.com/cristinahdz29/Plantr
+Project Link: https://app-plantr.herokuapp.com
 
 
 
