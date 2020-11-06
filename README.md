@@ -45,6 +45,7 @@ Why an app such as this can be helpful:
 * NodeJS
 * Express
 * Sequelize
+* Mustache Templates
 * Formidable
 * JavaScript
 * CSS
