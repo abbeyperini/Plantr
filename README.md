@@ -57,7 +57,7 @@ Why an app such as this can be helpful:
 ## Videos and Screenshots
 <img src="https://github.com/cristinahdz29/Plantr/blob/master/images/Screen-Recording-2020-11-06-at-1.gif" width=900 height=500>
 <img src="/images/login.png" width=900 height=500>
-<img src="images/homeMobile.png>
+<img src="/images/homeMobile.png">
 
 <!-- CONTACT -->
 ## Contact
