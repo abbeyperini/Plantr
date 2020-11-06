@@ -30,7 +30,6 @@ Plantr is a social media platform where users can upload photos and provide desc
 
 <p align='center'><img src="/images/plantrLogo.png"></img></p>
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
-
 Our passion for plants inspired us to create an app that enables fellow plant lovers to upload and share images and information about their plants. In this application users are able to create a collection of their plants and make posts. Plantr users can also view, like, and comment on posts belonging to other users. Our goal with this app is to create a space where new and existing plant parents can interact and share their love for all things plants.
 
 Why an app such as this can be helpful:
@@ -64,13 +63,13 @@ Why an app such as this can be helpful:
 ## Contact
 
 
-Abbey Perini - (https://github.com/abbeyperini) Github
-Cristina Hernandez - (https://github.com/cristinahdz29) Github
-Juan Trinidad - (https://github.com/juantrinidad14) github
+* Abbey Perini - (https://github.com/abbeyperini) Github
+* Cristina Hernandez - (https://github.com/cristinahdz29) Github
+* Juan Trinidad - (https://github.com/juantrinidad14) Github
 
 
 
-Project Link:https://github.com/cristinahdz29/Plantr
+Project Link: https://app-plantr.herokuapp.com
 
 
 
