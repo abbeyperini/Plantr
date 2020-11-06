@@ -43,29 +43,29 @@ Why an app such as this can be helpful:
 
 ### Built With
 * NodeJS
+* Express
+* Sequelize
+* Formidable
 * JavaScript
 * CSS
 * ElephantSQL
 * PostgreSQL
 
-
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 * Interact with other Plantr users by creating, commenting, and liking plant posts all while enriching your own knowledge of plant care.
 ## Videos and Screenshots
-<img src="/images/login.png">
-<img src="code 2">
-<img src="code3">
-
+<img src="https://github.com/cristinahdz29/Plantr/blob/master/images/Screen-Recording-2020-11-06-at-1.gif" width=900 height=600>
+<img src="/images/login.png" width=900 height=600>
+<img src="/images/homeMobile.png>
 
 <!-- CONTACT -->
 ## Contact
 
 
-* Abbey Perini - (https://github.com/abbeyperini) Github
-* Cristina Hernandez - (https://github.com/cristinahdz29) Github
-* Juan Trinidad - (https://github.com/juantrinidad14) Github
+* Abbey Perini - [Github](https://github.com/abbeyperini)
+* Cristina Hernandez - [Github](https://github.com/cristinahdz29)
+* Juan Trinidad - [Github](https://github.com/juantrinidad14)
 
 
 
@@ -77,9 +77,9 @@ Project Link: https://app-plantr.herokuapp.com
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
  
- * Abbey Perini (https://github.com/abbeyperini) Github
- * Cristina Hernandez - (https://github.com/cristinahdz29) Github
- * Juan Trinidad - (https://github.com/juantrinidad14) Github
+ * [Abbey Perini](https://github.com/abbeyperini)
+ * [Cristina Hernandez](https://github.com/cristinahdz29)
+ * [Juan Trinidad](https://github.com/juantrinidad14)
 
 
 
