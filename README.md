@@ -30,7 +30,6 @@ Plantr is a social media platform where users can upload photos and provide desc
 
 <p align='center'><img src="/images/plantrLogo.png"></img></p>
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
-
 Our passion for plants inspired us to create an app that enables fellow plant lovers to upload and share images and information about their plants. In this application users are able to create a collection of their plants and make posts. Plantr users can also view, like, and comment on posts belonging to other users. Our goal with this app is to create a space where new and existing plant parents can interact and share their love for all things plants.
 
 Why an app such as this can be helpful:
@@ -44,33 +43,34 @@ Why an app such as this can be helpful:
 
 ### Built With
 * NodeJS
+* Express
+* Sequelize
+* Mustache Templates
+* Formidable
 * JavaScript
 * CSS
 * ElephantSQL
 * PostgreSQL
 
-
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 * Interact with other Plantr users by creating, commenting, and liking plant posts all while enriching your own knowledge of plant care.
 ## Videos and Screenshots
-<img src="/images/login.png">
-<img src="code 2">
-<img src="code3">
-
+<img src="https://github.com/cristinahdz29/Plantr/blob/master/images/Screen-Recording-2020-11-06-at-1.gif" width=900 height=500>
+<img src="/images/login.png" width=900 height=500>
+<img src="/images/homeMobile.png">
 
 <!-- CONTACT -->
 ## Contact
 
 
-Abbey Perini - (https://github.com/abbeyperini) Github
-Cristina Hernandez - (https://github.com/cristinahdz29) Github
-Juan Trinidad - (https://github.com/juantrinidad14) github
+* Abbey Perini - [Github](https://github.com/abbeyperini)
+* Cristina Hernandez - [Github](https://github.com/cristinahdz29)
+* Juan Trinidad - [Github](https://github.com/juantrinidad14)
 
 
 
-Project Link:https://github.com/cristinahdz29/Plantr
+Project Link: https://app-plantr.herokuapp.com
 
 
 
@@ -78,9 +78,9 @@ Project Link:https://github.com/cristinahdz29/Plantr
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
  
- * Abbey Perini (https://github.com/abbeyperini) Github
- * Cristina Hernandez - (https://github.com/cristinahdz29) Github
- * Juan Trinidad - (https://github.com/juantrinidad14) Github
+ * [Abbey Perini](https://github.com/abbeyperini)
+ * [Cristina Hernandez](https://github.com/cristinahdz29)
+ * [Juan Trinidad](https://github.com/juantrinidad14)
 
 
 
